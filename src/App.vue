@@ -50,18 +50,7 @@
             
             console.log('starting...')
             if (this.components.Landing) { return }
-            
-            const env = 'dev'
-            if (env === 'dev') {
-                console.log('lllll 2')
-                this.$store.dispatch('setAccount', 'rThREeXrp54XTQueDowPV1RxmkEAGUmg8')
-                const servers = ['wss://node.panicbot.xyz']
-                this.client = new XrplClient(servers)
-            }
-            else {
-                await this.jwtFlow()
-            }
-            
+            await this.jwtFlow()
             this.components.Landing = true
             console.log('loaded')
         },
