@@ -153,6 +153,8 @@
                 console.log('payload', payload)
 
                 xapp.openSignRequest({ uuid: payload.created.uuid })
+                await this.getAccountInfo()
+                await this.getAccountObjects()
             },
             async authButton() {
                 const acc_payload = {
@@ -194,6 +196,8 @@
                 console.log('payload', payload)
 
                 xapp.openSignRequest({ uuid: payload.created.uuid })
+                await this.getAccountInfo()
+                await this.getAccountObjects()
             },
 
             async authEnableButton() {
@@ -241,6 +245,8 @@
                 console.log('payload', payload)
 
                 xapp.openSignRequest({ uuid: payload.created.uuid })
+                await this.getAccountInfo()
+                await this.getAccountObjects()
             },
             async Fee() {
                 const server_info = await this.client.send({ 'command': 'server_info' })
