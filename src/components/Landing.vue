@@ -93,7 +93,8 @@
                     }
                     
                     console.log('xxxx', this.accountObjects)
-                    for (const account of Object.keys(this.accountObjects)) {
+                    for (let index = 0; index < this.accountObjects.length; index++) {
+                        const account = this.accountObjects[index]
                         if (account.Authorize !== account) { continue }
                         console.log('account already is white listed')
                         this.$emit('clear', true)
