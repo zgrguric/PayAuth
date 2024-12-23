@@ -94,9 +94,9 @@
                     
                     console.log('xxxx', this.accountObjects)
                     for (let index = 0; index < this.accountObjects.length; index++) {
-                        const account = this.accountObjects[index]
+                        const whitelisted = this.accountObjects[index]
                         console.log('checking', account)
-                        if (account.Authorize !== account) { continue }
+                        if (whitelisted.Authorize !== account) { continue }
                         console.log('account already is white listed')
                         this.$emit('clear', true)
                         return
