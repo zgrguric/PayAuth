@@ -92,7 +92,7 @@
                         this.$emit('clear', true)
                     }
                     
-                    console.log('xxxx', Object.keys(this.accountObjects))
+                    console.log('xxxx', this.accountObjects)
                     for (const account of Object.keys(this.accountObjects)) {
                         if (account.Authorize !== account) { continue }
                         console.log('account already is white listed')
