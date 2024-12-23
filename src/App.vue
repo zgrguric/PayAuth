@@ -139,7 +139,7 @@
                     console.log('QR scanned / cancelled', data)
                     console.log('SCANNED A QR CODE')
                     console.log('qrContents', data?.qrContents)
-                    self.qr_scan(data?.qrContents)
+                    self.qr_scan = data?.qrContents
                 })
             },
             async openScan() {
