@@ -91,11 +91,9 @@
                     if (!api.isValidClassicAddress(account)) {
                         this.$emit('clear', true)
                     }
-                    
-                    console.log('xxxx', this.accountObjects)
+
                     for (let index = 0; index < this.accountObjects.length; index++) {
                         const whitelisted = this.accountObjects[index]
-                        console.log('checking', account)
                         if (whitelisted.Authorize !== account) { continue }
                         console.log('account already is white listed')
                         this.$emit('clear', true)
@@ -119,7 +117,6 @@
                     'limit': 100
                 }
                 const account_objects = await this.client.send(acc_payload)
-                console.log('account_objects', account_objects)
                 this.accountObjects = account_objects.account_objects
             },
             async getAccountInfo() {
@@ -130,7 +127,6 @@
                     'ledger_index': 'validated'
                 }
                 const account_info = await this.client.send(acc_payload)
-                console.log('account_info', account_info)
                 if ('error' in account_info) { return }
                 this.depositAuth = account_info.account_flags.depositAuth
             },
@@ -142,7 +138,6 @@
                     'ledger_index': 'validated'
                 }
                 const account_info = await this.client.send(acc_payload)
-                console.log('account_info', account_info)
                 const tx_json = {
                     'TransactionType' : 'DepositPreauth',
                     'Account' : this.$store.getters.getAccount,
@@ -184,7 +179,6 @@
                     'ledger_index': 'validated'
                 }
                 const account_info = await this.client.send(acc_payload)
-                console.log('account_info', account_info)
                 const tx_json = {
                     'TransactionType' : 'DepositPreauth',
                     'Account' : this.$store.getters.getAccount,
@@ -228,8 +222,6 @@
                     'ledger_index': 'validated'
                 }
                 const account_info = await this.client.send(acc_payload)
-                console.log('account_info', account_info)
-
                 const tx_json = {
                     'TransactionType' : 'AccountSet',
                     'Account' : this.$store.getters.getAccount,
