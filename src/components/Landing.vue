@@ -41,7 +41,8 @@
 
     export default {
         name: 'Landing',
-        props: ['client', 'Sdk', 'nodetype'],
+        props: ['client', 'Sdk', 'nodetype', 'qr_scan'],
+        emits: ['clear'],
         data() {
             return {
                 auth: undefined,
@@ -80,6 +81,10 @@
                 if (this.$store.getters.getAccount != '') {
                     console.log('account loaded', this.$store.getters.getAccount)
                 }
+            },
+            async qr_scan() {
+                console.log('qr_scan passed', this.qr_scan)
+                this.$emit('clear', true)
             }
         },
         methods: {

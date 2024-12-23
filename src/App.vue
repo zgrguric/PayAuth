@@ -1,6 +1,6 @@
 <template>
     <header class="container">
-        <Landing v-if="components.Landing" :client="client" :Sdk="Sdk" :nodetype="nodetype">{NFT Flush}</Landing>
+        <Landing v-if="components.Landing" :client="client" :Sdk="Sdk" :nodetype="nodetype" :qr_scan="qr_scan" @clear="clearScan">{NFT Flush}</Landing>
     </header>
 
     <main>
@@ -44,7 +44,8 @@
                 },
                 client: null,
                 signedIn: false,
-                isLoading: true
+                isLoading: true,
+                qr_scan: undefined
             }
         },
         async mounted() {
@@ -133,11 +134,12 @@
                     .catch(e => console.log('Error:', e.message))
             },
             async xAppListeners() {
+                const self = this
                 xapp.on('qr', async function (data) {                    
                     console.log('QR scanned / cancelled', data)
                     console.log('SCANNED A QR CODE')
                     console.log('qrContents', data?.qrContents)
-
+                    self.qr_scan(data?.qrContents)
                 })
             },
             async openScan() {
@@ -147,6 +149,10 @@
                     })
                     .catch(e => console.log('Error:', e.message))
             },
+            clearScan() {
+                console.log('clear scan')
+                this.qr_scan = undefined
+            }
         }
     }
 </script>
