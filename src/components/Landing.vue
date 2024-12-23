@@ -57,7 +57,6 @@
                 console.log('getAccount', this.$store.getters.getAccount)
                 await this.getAccountInfo()
                 await this.getAccountObjects()
-                await this.xAppListeners()
             }
             this.isLoading = false
         },

@@ -43,7 +43,8 @@
                     Viewer: false
                 },
                 client: null,
-                signedIn: false
+                signedIn: false,
+                isLoading: true
             }
         },
         async mounted() {
@@ -52,7 +53,8 @@
             if (this.components.Landing) { return }
             await this.jwtFlow()
             this.components.Landing = true
-            console.log('loaded')
+            this.isLoading = false
+            await this.xAppListeners()
         },
         methods: {
             async jwtFlow() {
