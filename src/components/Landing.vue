@@ -115,7 +115,7 @@
         methods: {
             async addAlert(message) {
                 this.alert = message
-                await this.pause()
+                await this.pause(10_000)
                 this.alert = undefined
             },
             async pause(milliseconds = 1000) {
