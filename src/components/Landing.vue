@@ -11,6 +11,10 @@
                 <p v-if="!depositAuth">Is not enabled there is no restriction to which accounts can send your account a payment.</p>
             </div>
 
+            <div v-if="alert !== undefined" class="alert alert-warning" role="alert">
+                {{ alert }}
+            </div>
+
             <div class="input-group">
                 <input type="text" class="form-control" aria-label="Default" aria-describedby="auth-address" placeholder="rAddress to authorize" v-model="auth">
                 <button class="btn btn-sm btn btn-primary" @click="authButton()">authorize</button>
@@ -46,6 +50,7 @@
         emits: ['clear'],
         data() {
             return {
+                alert: undefined,
                 auth: undefined,
                 isLoading: true,
                 depositAuth: false,
@@ -89,6 +94,7 @@
                     const account = this.qr_scan
                     console.log('isValidAddress', api.isValidClassicAddress(account))
                     if (!api.isValidClassicAddress(account)) {
+                        this.addAlert('in valid rAddress')
                         this.$emit('clear', true)
                     }
 
@@ -96,6 +102,7 @@
                         const whitelisted = this.accountObjects[index]
                         if (whitelisted.Authorize !== account) { continue }
                         console.log('account already is white listed')
+                        this.addAlert('account already is white listed')
                         this.$emit('clear', true)
                         return
                     }
@@ -106,6 +113,17 @@
             }
         },
         methods: {
+            async addAlert(message) {
+                this.alert = message
+                await this.pause()
+                this.alert = undefined
+            },
+            async pause(milliseconds = 1000) {
+                return new Promise(resolve => {
+                    // console.log('pausing....')
+                    setTimeout(resolve, milliseconds)
+                })
+            },
             async getAccountObjects() {
                 const acc_payload = {
                     'id': 0,
