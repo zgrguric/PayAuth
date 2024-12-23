@@ -208,7 +208,7 @@
 
                 const tx_json = {
                     'TransactionType' : 'AccountSet',
-                    'Account' : this.address,
+                    'Account' : this.$store.getters.getAccount,
                     'Fee': this.Fee(),
                     'Sequence': account_info.account_data.Sequence
                 }
