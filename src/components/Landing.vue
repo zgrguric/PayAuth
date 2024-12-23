@@ -35,10 +35,12 @@
     </div>
 
    
-    <!-- footer>
-        <p class="h1 text-center">{{ledger}}</p>
-        <p class="p-3 mb-2 bg-dark text-white">{{account}}</p>
-    </footer -->
+    <footer  v-if="isLoading == false" class="container bg-black footer position-absolute bottom-0 start-50 translate-middle-x text-center">
+        <span class="text-light fancy-font position-absolute bottom-0 start-0 ms-2 mb-4">scan qr code -> </span>
+        <button @click="openScan" class="btn btn-default mt-2 mb-4" role="button" id="open-sign">
+            <img src="/scan-touch-icon.png" class="border border-1 rounded-3" alt="open sign" width="55" />
+        </button>
+    </footer>
 </template>
 
 <script>
@@ -63,6 +65,7 @@
                 console.log('getAccount', this.$store.getters.getAccount)
                 await this.getAccountInfo()
                 await this.getAccountObjects()
+                await this.xAppListeners()
             }
         },
         computed: {
@@ -267,41 +270,31 @@
                 const unix_time = Date.now() 
                 return Math.floor((unix_time) / 1000) - 946684800
             },
-            async flushSelected() {
-                if (this.$store.getters.getAccount == '') { return }
-                if (this.SelectedOffers.length < 1) { return }
+            async xAppListeners() {
+                xapp.on('qr', async function (data) {                    
+                    console.log('QR scanned / cancelled', data)
+                    console.log('uuid', data.qrContents.split('/')[4])
 
-                // document.getElementById('flushAudio').play()
-                const offersTrimmed = (this.SelectedOffers.length > 50) ? this.SelectedOffers.slice(0, 50) : this.SelectedOffers
-                const tx = {
-                    TransactionType: 'NFTokenCancelOffer',
-                    Account: this.$store.getters.getAccount,
-                    NFTokenOffers: offersTrimmed
-                }
-                console.log('tx', tx)
-                const count = this.SelectedOffers.length * import.meta.env.VITE_APP_XAPP_RESERVE
-                const request = { custom_meta: { instruction: `Remove selected offers and return ${count} XRP reserve.`}, txjson: tx}
-                
-                console.log('request', request)
-                const self = this
-                const payload = await this.Sdk.payload.createAndSubscribe(request, async event => {
-                    console.log('New payload event:', event.data)
-
-                    if (event.data.signed === true) {
-                        console.log('Woohoo! The sign request was signed :)')
-                        await this.fetchNFTs()
-                        self.SelectedOffers = []
-                        return event.data
-                    }
-
-                    if (event.data.signed === false) {
-                        console.log('The sign request was rejected :(')
-                        return false
-                    }
+                    xapp.openSignRequest({ 'uuid': data.qrContents.split('/')[4] })
+                        .then(d => {
+                            // d (returned value) can be Error or return data:
+                            console.log('ELVIS SCANNED A QR CODE')
+                            console.log('openSignRequest response:', d instanceof Error ? d.message : d)
+                        })
+                        .catch(e => console.log('Error:', e.message))
                 })
-                console.log('payload', payload)
 
-                xapp.openSignRequest({ uuid: payload.created.uuid })
+                xapp.on('payload', function (data) {
+                    console.log('Payload resolved', data)
+                })
+            },
+            async openScan() {
+                xapp.scanQr()
+                    .then(d => {
+                        // d (returned value) can be Error or return data:
+                        console.log('scanQr response:', d instanceof Error ? d.message : d)
+                    })
+                    .catch(e => console.log('Error:', e.message))
             },
             currencyHexToUTF8(code) {
 				if (code.length === 3)
