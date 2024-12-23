@@ -253,7 +253,9 @@
                     server_info.load_factor = 1
                 }
                 const FEE_CUSHION = 1.2
-                return new decimal(server_info.info.validated_ledger.base_fee_xrp).mul(server_info.load_factor).mul(FEE_CUSHION).mul(1_000_000).toFixed(0)
+                const base_fee = new decimal(server_info.info.validated_ledger.base_fee_xrp).mul(server_info.load_factor).mul(FEE_CUSHION).mul(1_000_000).toFixed(0)
+                console.log('FEE', base_fee)
+                return base_fee
             },
             ledgerEpoch() {
                 const unix_time = Date.now() 
