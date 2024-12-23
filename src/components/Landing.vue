@@ -84,7 +84,11 @@
             },
             async qr_scan() {
                 console.log('qr_scan passed', this.qr_scan)
-                this.$emit('clear', true)
+                if (this.qr_scan !== undefined) {
+                    this.authButton(this.qr_scan)
+                    this.$emit('clear', true)
+                }
+                
             }
         },
         methods: {
@@ -156,7 +160,7 @@
                 await this.getAccountInfo()
                 await this.getAccountObjects()
             },
-            async authButton() {
+            async authButton(account) {
                 const acc_payload = {
                     'id': 1,
                     'command': 'account_info',
@@ -168,7 +172,7 @@
                 const tx_json = {
                     'TransactionType' : 'DepositPreauth',
                     'Account' : this.$store.getters.getAccount,
-                    'Authorize' : this.auth,
+                    'Authorize' : account === undefined ? this.auth: account,
                     'Flags' : 2147483648,
                     'Fee': await this.Fee(),
                     'Sequence': account_info.account_data.Sequence
