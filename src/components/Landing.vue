@@ -86,14 +86,21 @@
             async qr_scan() {
                 console.log('qr_scan passed', this.qr_scan)
                 if (this.qr_scan !== undefined) {
-                    console.log('isValidAddress', api.isValidClassicAddress(this.qr_scan))
-                    if (api.isValidClassicAddress(this.qr_scan)) {
-                        this.authButton(this.qr_scan)
+                    const account = this.qr_scan
+                    console.log('isValidAddress', api.isValidClassicAddress(account))
+                    if (!api.isValidClassicAddress(account)) {
+                        this.$emit('clear', true)
                     }
                     
+                    for (const account of Object.keys(this.accountObjects)) {
+                        if (account.Authorize !== account) { continue }
+                        this.$emit('clear', true)
+                        return
+                    }
+
+                    this.authButton(account)
                     this.$emit('clear', true)
                 }
-                
             }
         },
         methods: {
