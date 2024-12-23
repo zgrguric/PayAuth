@@ -94,15 +94,15 @@
                     const account = this.qr_scan
                     console.log('isValidAddress', api.isValidClassicAddress(account))
                     if (!api.isValidClassicAddress(account)) {
-                        this.addAlert('in valid rAddress')
+                        this.addAlert('Invalid rAddress')
                         this.$emit('clear', true)
                     }
 
                     for (let index = 0; index < this.accountObjects.length; index++) {
                         const whitelisted = this.accountObjects[index]
                         if (whitelisted.Authorize !== account) { continue }
-                        console.log('account already is white listed')
-                        this.addAlert('account already is white listed')
+                        console.log('Account already is Authorized')
+                        this.addAlert('Account already is Authorized')
                         this.$emit('clear', true)
                         return
                     }
@@ -200,7 +200,7 @@
 
                 console.log('isValidAddress', api.isValidClassicAddress(this.auth))
                 if (account === undefined && !api.isValidClassicAddress(this.auth)) {
-                    this.addAlert('in valid rAddress')
+                    this.addAlert('Invalid rAddress')
                     return
                 }
 
