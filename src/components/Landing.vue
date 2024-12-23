@@ -37,6 +37,7 @@
 
 <script>
     import decimal from 'decimal.js'
+    import api from 'ripple-address-codec'
     const xapp = window.xAppSdk
 
     export default {
@@ -85,6 +86,7 @@
             async qr_scan() {
                 console.log('qr_scan passed', this.qr_scan)
                 if (this.qr_scan !== undefined) {
+                    console.log('isValidAddress', api.isValidAddress(this.qr_scan))
                     this.authButton(this.qr_scan)
                     this.$emit('clear', true)
                 }
