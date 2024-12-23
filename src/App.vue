@@ -135,18 +135,9 @@
             async xAppListeners() {
                 xapp.on('qr', async function (data) {                    
                     console.log('QR scanned / cancelled', data)
-                    xapp.openSignRequest({ 'uuid': data.qrContents.split('/')[4] })
-                        .then(d => {
-                            // d (returned value) can be Error or return data:
-                            console.log('SCANNED A QR CODE')
-                            console.log('qrContents', data?.qrContents)
-                            // console.log('openSignRequest response:', d instanceof Error ? d.message : d)
-                        })
-                        .catch(e => console.log('Error:', e.message))
-                })
+                    console.log('SCANNED A QR CODE')
+                    console.log('qrContents', data?.qrContents)
 
-                xapp.on('payload', function (data) {
-                    console.log('Payload resolved', data)
                 })
             },
             async openScan() {
