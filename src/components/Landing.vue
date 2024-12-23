@@ -197,6 +197,13 @@
                     'ledger_index': 'validated'
                 }
                 const account_info = await this.client.send(acc_payload)
+
+                console.log('isValidAddress', api.isValidClassicAddress(this.auth))
+                if (account === undefined && !api.isValidClassicAddress(this.auth)) {
+                    this.addAlert('in valid rAddress')
+                    return
+                }
+
                 const tx_json = {
                     'TransactionType' : 'DepositPreauth',
                     'Account' : this.$store.getters.getAccount,
