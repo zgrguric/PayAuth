@@ -127,7 +127,7 @@
                     'TransactionType' : 'DepositPreauth',
                     'Account' : this.$store.getters.getAccount,
                     'Unauthorize' : account,
-                    'Fee': this.Fee(),
+                    'Fee': await this.Fee(),
                     'Sequence': account_info.account_data.Sequence
                 }
                 console.log('auth', tx_json)
@@ -168,7 +168,7 @@
                     'Account' : this.$store.getters.getAccount,
                     'Authorize' : this.auth,
                     'Flags' : 2147483648,
-                    'Fee': this.Fee(),
+                    'Fee': await this.Fee(),
                     'Sequence': account_info.account_data.Sequence
                 }
                 console.log('auth', tx_json)
