@@ -3,7 +3,7 @@ import en from 'locales/en.json'
 import es from 'locales/es.json'
 
 function loadLocaleMessages() {
-    const locales = [{ en: en }, { ar: ar }]
+    const locales = [{ en: en }, { es: es }]
     const messages = {}
     locales.forEach((lang) => {
         const key = Object.keys(lang)
