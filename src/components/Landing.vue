@@ -7,7 +7,7 @@
             </div>
             <div class="col-12 fs-6 mb-5">
                 <h3>{{ $t('app_title') }}</h3>
-                <p v-if="depositAuth">{{ $t('main_description') }}</p><p v-if="depositAuth">{{ $t('trouble_shoot') }}</p>
+                <p v-if="depositAuth" v-html="$t('main_description')"></p><p v-if="depositAuth" v-html="$t('trouble_shoot')"></p>
                 <p v-if="!depositAuth">{{ $t('not_enabled') }}</p>
             </div>
 
@@ -113,6 +113,10 @@
             }
         },
         methods: {
+            htmlToText: function (html) {
+                this.utilityEl.innerHTML = html
+                return this.utilityEl.textContent
+            },
             async addAlert(message) {
                 this.alert = message
                 await this.pause(10_000)
