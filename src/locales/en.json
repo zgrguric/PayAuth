@@ -1,3 +1,6 @@
 {
-    "app_title" : "Deposit Authorization test"
+    "app_title" : "Deposit Authorization",
+    "main_description": "To receive money from payment transactions as you have <em>Deposit Authorization</em> enabled, <strong>you must preauthorize the senders of those Payments</strong>. Any payments from an account not in the list will be rejected.",
+    "trouble_shoot": "If you are having difficulty sending a payment to your account you can temporarily disable the <em>Deposit Authorization</em>."
+
 }

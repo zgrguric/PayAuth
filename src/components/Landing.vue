@@ -6,8 +6,8 @@
                 <p class="text-muted text-end fs-6"><span class="fancy-font">PayAuth</span>  by three</p>
             </div>
             <div class="col-12 fs-6 mb-5">
-                <h3>{{ this.$t('app_title') }}</h3>
-                <p v-if="depositAuth">To receive money from payment transactions as you have <em>Deposit Authorization</em> enabled, <strong>you must preauthorize the senders of those Payments</strong>. Any payments from an account not in the list will be rejected.</p><p v-if="depositAuth">If you are having difficulty sending a payment to your account you can temporarily disable the <em>Deposit Authorization</em>.</p>
+                <h3>{{ $t('app_title') }}</h3>
+                <p v-if="depositAuth">{{ $t('main_description') }}</p><p v-if="depositAuth">{{ $t('trouble_shoot') }}</p>
                 <p v-if="!depositAuth">Is not enabled there is no restriction to which accounts can send your account a payment.</p>
             </div>
 
