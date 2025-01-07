@@ -26,7 +26,7 @@
                 <div v-for="account in accountObjects"> <button class="mt-2 btn btn-sm btn btn-outline-primary" @click="removeButton(account.Authorize)">{{ account.Authorize }}</button></div>
                 <small>{{ $t('list_helper') }}</small>
             </div>
-            <div v-if="accountObjects !== null && Object.keys(accountObjects).length === 0" class="col-12 fs-6 mt-5 mb-5">
+            <div v-if="accountObjects === null || Object.keys(accountObjects).length === 0" class="col-12 fs-6 mt-5 mb-5">
                 <h5>{{ $t('list_title') }}</h5>
                 <p v-if="depositAuth" class="text-danger">{{ $t('warning') }}</p>
                 <p v-if="!depositAuth">{{ $t('list_information') }}</p>
