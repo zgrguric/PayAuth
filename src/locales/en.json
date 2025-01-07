@@ -4,6 +4,7 @@
     "trouble_shoot": "If you are having difficulty sending a payment to your account you can temporarily disable the <em>Deposit Authorization</em>.",
     "not_enabled": "Is not enabled there is no restriction to which accounts can send your account a payment.",
     "auth_button": "authorize",
+    "input_placeholder": "rAddress to authorize",
     "list_title": "Authorized Accounts",
     "list_helper": "tap to remove accounts",
     "warning": "No account can make a payment to this wallet.",

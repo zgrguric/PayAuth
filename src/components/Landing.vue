@@ -16,7 +16,7 @@
             </div>
 
             <div class="input-group">
-                <input type="text" class="form-control" aria-label="Default" aria-describedby="auth-address" placeholder="rAddress to authorize" v-model="auth">
+                <input type="text" class="form-control" aria-label="Default" aria-describedby="auth-address" :placeholder="$t('input_placeholder')" v-model="auth">
                 <button class="btn btn-sm btn btn-primary" @click="authButton()">{{ $t('auth_button') }}</button>
             </div>
 
