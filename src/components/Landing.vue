@@ -66,6 +66,8 @@
                 await this.getAccountObjects()
             }
             this.isLoading = false
+
+            console.log('XXXXX', this.t.locale.value)
         },
         computed: {
             ledger() {
