@@ -174,7 +174,9 @@
 
                     if (event.data.signed === true) {
                         console.log('Woohoo! The sign request was signed :)')
-                        // need to trigger fetching auth object from ledger
+                        await this.pause(5_000)
+                        await this.getAccountInfo()
+                        await this.getAccountObjects()
                         return event.data
                     }
 
@@ -185,19 +187,10 @@
                 })
                 console.log('payload', payload)
 
-                const self = this
-                xapp.openSignRequest({ uuid: payload.created.uuid }).then(async d => {
-                        // d (returned value) can be Error or return data:
-                        console.log('openSignRequest response:', d instanceof Error ? d.message : d)
-                        
-                        await self.pause(5_000)
-                        console.log('refreshing after submission')
-                        await self.getAccountInfo()
-                        await self.getAccountObjects()
-                    })
-                    .catch(e => console.log('Error:', e.message))
+                console.log('payload', payload)
 
-                
+
+                xapp.openSignRequest({ uuid: payload.created.uuid })
             },
             async authButton(account) {
                 const acc_payload = {
@@ -233,7 +226,9 @@
 
                     if (event.data.signed === true) {
                         console.log('Woohoo! The sign request was signed :)')
-                        // need to trigger fetching auth object from ledger
+                        await this.pause(5_000)
+                        await this.getAccountInfo()
+                        await this.getAccountObjects()
                         return event.data
                     }
 
@@ -244,17 +239,7 @@
                 })
                 console.log('payload', payload)
 
-                const self = this
-                xapp.openSignRequest({ uuid: payload.created.uuid }).then(async d => {
-                        // d (returned value) can be Error or return data:
-                        console.log('openSignRequest response:', d instanceof Error ? d.message : d)
-                        
-                        await self.pause(5_000)
-                        console.log('refreshing after submission')
-                        await self.getAccountInfo()
-                        await self.getAccountObjects()
-                    })
-                    .catch(e => console.log('Error:', e.message))
+                xapp.openSignRequest({ uuid: payload.created.uuid })
             },
 
             async authEnableButton() {
@@ -288,7 +273,9 @@
 
                     if (event.data.signed === true) {
                         console.log('Woohoo! The sign request was signed :)')
-                        // need to trigger fetching auth object from ledger
+                        await this.pause(5_000)
+                        await this.getAccountInfo()
+                        await this.getAccountObjects()
                         return event.data
                     }
 
@@ -299,17 +286,7 @@
                 })
                 console.log('payload', payload)
 
-                const self = this
-                xapp.openSignRequest({ uuid: payload.created.uuid }).then(async d => {
-                        // d (returned value) can be Error or return data:
-                        console.log('openSignRequest response:', d instanceof Error ? d.message : d)
-                        
-                        await self.pause(5_000)
-                        console.log('refreshing after submission')
-                        await self.getAccountInfo()
-                        await self.getAccountObjects()
-                    })
-                    .catch(e => console.log('Error:', e.message))
+                xapp.openSignRequest({ uuid: payload.created.uuid })
             },
             async Fee() {
                 const server_info = await this.client.send({ 'command': 'server_info' })

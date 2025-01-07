@@ -99,42 +99,42 @@
                 }
                 this.client.on('ledger', callback)
             },
-            async jwtSignIn() {
-                const self = this
-                const request  = { txjson: { TransactionType: 'SignIn' }}
-                // const subscription = await this.Sdk.payload.create(request)
+            // async jwtSignIn() {
+            //     const self = this
+            //     const request  = { txjson: { TransactionType: 'SignIn' }}
+            //     // const subscription = await this.Sdk.payload.create(request)
 
-                const subscription = await this.Sdk.payload.createAndSubscribe(request, async event => {
-                    console.log('New payload event:', event.data)
+            //     const subscription = await this.Sdk.payload.createAndSubscribe(request, async event => {
+            //         console.log('New payload event:', event.data)
 
-                    if (event.data.signed === true) {
-                        console.log('Woohoo! The sign request was signed :)')
-                        self.signedIn = true
-                        self.$store.dispatch('setUserToken', event.data.payload_uuidv4)
-                        // await self.getStoreage()
-                        return event.data
-                    }
+            //         if (event.data.signed === true) {
+            //             console.log('Woohoo! The sign request was signed :)')
+            //             self.signedIn = true
+            //             self.$store.dispatch('setUserToken', event.data.payload_uuidv4)
+            //             // await self.getStoreage()
+            //             return event.data
+            //         }
 
-                    if (event.data.signed === false) {
-                        console.log('The sign request was rejected :(')
-                        xapp.close({ refreshEvents: true })
-                            .then(d => {
-                                // d (returned value) can be Error or return data:
-                                console.log('close response:', d instanceof Error ? d.message : d)
-                            })
-                            .catch(e => console.log('Error:', e.message))
-                        return false
-                    }
-                })
-                console.log('subscription', subscription)
+            //         if (event.data.signed === false) {
+            //             console.log('The sign request was rejected :(')
+            //             xapp.close({ refreshEvents: true })
+            //                 .then(d => {
+            //                     // d (returned value) can be Error or return data:
+            //                     console.log('close response:', d instanceof Error ? d.message : d)
+            //                 })
+            //                 .catch(e => console.log('Error:', e.message))
+            //             return false
+            //         }
+            //     })
+            //     console.log('subscription', subscription)
 
-                xapp.openSignRequest({ uuid: subscription.created.uuid })
-                    .then(d => {
-                        // d (returned value) can be Error or return data:
-                        console.log('openSignRequest response:', d instanceof Error ? d.message : d)
-                    })
-                    .catch(e => console.log('Error:', e.message))
-            },
+            //     xapp.openSignRequest({ uuid: subscription.created.uuid })
+            //         .then(d => {
+            //             // d (returned value) can be Error or return data:
+            //             console.log('openSignRequest response:', d instanceof Error ? d.message : d)
+            //         })
+            //         .catch(e => console.log('Error:', e.message))
+            // },
             async xAppListeners() {
                 const self = this
                 xapp.on('qr', async function (data) {                    
