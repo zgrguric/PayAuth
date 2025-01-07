@@ -8,7 +8,7 @@
             <div class="col-12 fs-6 mb-5">
                 <h3>{{ $t('app_title') }}</h3>
                 <p v-if="depositAuth">{{ $t('main_description') }}</p><p v-if="depositAuth">{{ $t('trouble_shoot') }}</p>
-                <p v-if="!depositAuth">Is not enabled there is no restriction to which accounts can send your account a payment.</p>
+                <p v-if="!depositAuth">{{ $t('not_enabled') }}</p>
             </div>
 
             <div v-if="alert !== undefined" class="alert alert-warning" role="alert">
@@ -17,23 +17,23 @@
 
             <div class="input-group">
                 <input type="text" class="form-control" aria-label="Default" aria-describedby="auth-address" placeholder="rAddress to authorize" v-model="auth">
-                <button class="btn btn-sm btn btn-primary" @click="authButton()">authorize</button>
+                <button class="btn btn-sm btn btn-primary" @click="authButton()">{{ $t('auth_button') }}</button>
             </div>
 
             <div v-if="Object.keys(accountObjects).length > 0" class="col-12 fs-6 mt-5 mb-5">
-                <h5>Authorized Accounts</h5>
+                <h5>{{ $t('list_title') }}</h5>
                 
                 <div v-for="account in accountObjects"> <button class="mt-2 btn btn-sm btn btn-outline-primary" @click="removeButton(account.Authorize)">{{ account.Authorize }}</button></div>
-                <small>tap to remove accounts</small>
+                <small>{{ t('list_helper') }}</small>
             </div>
             <div v-if="Object.keys(accountObjects).length === 0" class="col-12 fs-6 mt-5 mb-5">
-                <h5>Authorized Accounts</h5>
-                <p v-if="depositAuth" class="text-danger">No account can make a payment to this wallet.</p>
-                <p v-if="!depositAuth">Add accounts that can make payments to this wallet.</p>
+                <h5>{{ $t('list_title') }}</h5>
+                <p v-if="depositAuth" class="text-danger">{{ $t('warning') }}</p>
+                <p v-if="!depositAuth">{{ $t('list_information') }}</p>
             </div>
 
             <div class="col-12 fs-6 mb-5">
-                <button :class="depositAuth ? 'btn btn-sm btn-danger':'btn btn-sm btn-primary'" @click="authEnableButton()">{{ depositAuth ? 'Disable Deposit Authorization': 'Enable Deposit Authorization' }}</button>
+                <button :class="depositAuth ? 'btn btn-sm btn-danger':'btn btn-sm btn-primary'" @click="authEnableButton()">{{ depositAuth ? $t('main_button_dis'): $t('main_button_en') }}</button>
             </div>
         </div>
     </div>

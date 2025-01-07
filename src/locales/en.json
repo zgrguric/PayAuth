@@ -1,6 +1,13 @@
 {
     "app_title" : "Deposit Authorization",
     "main_description": "To receive money from payment transactions as you have <em>Deposit Authorization</em> enabled, <strong>you must preauthorize the senders of those Payments</strong>. Any payments from an account not in the list will be rejected.",
-    "trouble_shoot": "If you are having difficulty sending a payment to your account you can temporarily disable the <em>Deposit Authorization</em>."
-
+    "trouble_shoot": "If you are having difficulty sending a payment to your account you can temporarily disable the <em>Deposit Authorization</em>.",
+    "not_enabled": "Is not enabled there is no restriction to which accounts can send your account a payment.",
+    "auth_button": "authorize",
+    "list_title": "Authorized Accounts",
+    "list_helper": "tap to remove accounts",
+    "warning": "No account can make a payment to this wallet.",
+    "list_information": "Add accounts that can make payments to this wallet.",
+    "main_button_dis" : "Disable Deposit Authorization",
+    "main_button_en" : "Enable Deposit Authorization"
 }
