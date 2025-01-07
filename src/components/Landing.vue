@@ -67,7 +67,7 @@
             }
             this.isLoading = false
 
-            console.log('XXXXX', this.$t.locale.value)
+            console.log('XXXXX', this.$t)
         },
         computed: {
             ledger() {
