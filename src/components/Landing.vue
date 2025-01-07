@@ -24,7 +24,7 @@
                 <h5>{{ $t('list_title') }}</h5>
                 
                 <div v-for="account in accountObjects"> <button class="mt-2 btn btn-sm btn btn-outline-primary" @click="removeButton(account.Authorize)">{{ account.Authorize }}</button></div>
-                <small>{{ t('list_helper') }}</small>
+                <small>{{ $t('list_helper') }}</small>
             </div>
             <div v-if="Object.keys(accountObjects).length === 0" class="col-12 fs-6 mt-5 mb-5">
                 <h5>{{ $t('list_title') }}</h5>
