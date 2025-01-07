@@ -1,14 +1,14 @@
 {
-    "app_title" : "Autorización de depósito",
-    "main_description": "To receive money from payment transactions as you have <em>Deposit Authorization</em> enabled, <strong>you must preauthorize the senders of those Payments</strong>. Any payments from an account not in the list will be rejected.",
-    "trouble_shoot": "If you are having difficulty sending a payment to your account you can temporarily disable the <em>Deposit Authorization</em>.",
-    "not_enabled": "Is not enabled there is no restriction to which accounts can send your account a payment.",
-    "auth_button": "authorize",
-    "input_placeholder": "rAddress to authorize",
-    "list_title": "Authorized Accounts",
-    "list_helper": "tap to remove accounts",
-    "warning": "No account can make a payment to this wallet.",
-    "list_information": "Add accounts that can make payments to this wallet.",
-    "main_button_dis" : "Disable Deposit Authorization",
-    "main_button_en" : "Enable Deposit Authorization"
+    "app_title": "Autorización de Depósito",
+    "main_description": "Para recibir dinero de transacciones de pago, ya que tienes <em>Autorización de Depósito</em> habilitada, <strong>debes preautorizar a los remitentes de esos pagos</strong>. Cualquier pago de una cuenta que no esté en la lista será rechazado.",
+    "trouble_shoot": "Si tienes dificultades para enviar un pago a tu cuenta, puedes deshabilitar temporalmente la <em>Autorización de Depósito</em>.",
+    "not_enabled": "No está habilitado, no hay restricción sobre qué cuentas pueden enviar un pago a tu cuenta.",
+    "auth_button": "autorizar",
+    "input_placeholder": "Dirección para autorizar",
+    "list_title": "Cuentas Autorizadas",
+    "list_helper": "toca para eliminar cuentas",
+    "warning": "Ninguna cuenta puede realizar un pago a esta billetera.",
+    "list_information": "Agrega cuentas que puedan hacer pagos a esta billetera.",
+    "main_button_dis": "Deshabilitar Autorización de Depósito",
+    "main_button_en": "Habilitar Autorización de Depósito"
 }

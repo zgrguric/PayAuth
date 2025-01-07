@@ -1,0 +1,14 @@
+{
+    "app_title": "Deposito Gemagtiging",
+    "main_description": "Om geld te ontvang vanaf betalingstransaksies, aangesien jy <em>Deposito Gemagtiging</em> geaktiveer het, <strong>moet jy die senders van daardie Betalings vooraf gemagtig</strong> wees. Enige betalings van 'n rekening wat nie in die lys is nie, sal verwerp word.",
+    "trouble_shoot": "As jy probleme ondervind om 'n betaling na jou rekening te stuur, kan jy die <em>Deposito Gemagtiging</em> tydelik deaktiveer.",
+    "not_enabled": "Is nie geaktiveer nie, daar is geen beperking op watter rekeninge 'n betaling na jou rekening kan stuur nie.",
+    "auth_button": "gemagtig",
+    "input_placeholder": "Adres om te magtig",
+    "list_title": "Gemagtigde Rekeninge",
+    "list_helper": "druk om rekeninge te verwyder",
+    "warning": "Geen rekening kan 'n betaling na hierdie beursie maak nie.",
+    "list_information": "Voeg rekeninge by wat betalings na hierdie beursie kan maak.",
+    "main_button_dis": "Deaktiveer Deposito Gemagtiging",
+    "main_button_en": "Aktiveer Deposito Gemagtiging"
+}
