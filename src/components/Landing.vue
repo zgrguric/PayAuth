@@ -58,8 +58,8 @@
             }
         },
         async mounted() {
-            // switch local...
-            this.$root.$i18n.locale = 'es'
+            console.log('setting local', this.$store.getters.getLocale)
+            this.$root.$i18n.locale = this.$store.getters.getLocale
             console.log('landing mounted...')
             // await this.fetchStorage()
             if (this.$store.getters.getAccount != '') {
@@ -68,8 +68,6 @@
                 await this.getAccountObjects()
             }
             this.isLoading = false
-
-            console.log('XXXXX', this.$root.$i18n.locale)
         },
         computed: {
             ledger() {
