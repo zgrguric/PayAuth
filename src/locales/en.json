@@ -10,5 +10,6 @@
     "warning": "No account can make a payment to this wallet.",
     "list_information": "Add accounts that can make payments to this wallet.",
     "main_button_dis" : "Disable Deposit Authorization",
-    "main_button_en" : "Enable Deposit Authorization"
+    "main_button_en" : "Enable Deposit Authorization",
+    "scan_qr": "scan qr code ->"
 }

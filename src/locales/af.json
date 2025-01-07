@@ -10,5 +10,6 @@
     "warning": "Geen rekening kan 'n betaling na hierdie beursie maak nie.",
     "list_information": "Voeg rekeninge by wat betalings na hierdie beursie kan maak.",
     "main_button_dis": "Deaktiveer Deposito Gemagtiging",
-    "main_button_en": "Aktiveer Deposito Gemagtiging"
+    "main_button_en": "Aktiveer Deposito Gemagtiging",
+    "scan_qr": "scan qr-kode ->"
 }

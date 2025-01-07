@@ -1,14 +1,14 @@
 <template>
     <header class="container">
-        <Landing v-if="components.Landing" :client="client" :Sdk="Sdk" :nodetype="nodetype" :qr_scan="qr_scan" @clear="clearScan">{NFT Flush}</Landing>
+        <Landing v-if="components.Landing" :client="client" :Sdk="Sdk" :nodetype="nodetype" :qr_scan="qr_scan" @clear="clearScan"></Landing>
     </header>
 
     <main>
-        <Viewer v-if="components.Viewer" :client="client" :Sdk="Sdk" :nodetype="nodetype">{NFT Flush}</Viewer>
+        <Viewer v-if="components.Viewer" :client="client" :Sdk="Sdk" :nodetype="nodetype"></Viewer>
     </main>
 
     <footer  v-if="!isLoading" class="container bg-black footer fixed-bottom start-50 translate-middle-x text-center">
-        <span class="text-light fancy-font position-absolute bottom-0 start-0 ms-2 mb-4">scan qr code -> </span>
+        <span class="text-light fancy-font position-absolute bottom-0 start-0 ms-2 mb-4">{{$t('scan_qr')}} </span>
         <button @click="openScan" class="btn btn-default mt-2 mb-4" role="button" id="open-sign">
             <img src="/scan-touch-icon.png" class="border border-0 rounded-3" alt="open sign" width="55" />
         </button>

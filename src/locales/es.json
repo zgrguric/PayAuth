@@ -10,5 +10,6 @@
     "warning": "Ninguna cuenta puede realizar un pago a esta billetera.",
     "list_information": "Agrega cuentas que puedan hacer pagos a esta billetera.",
     "main_button_dis": "Deshabilitar Autorización de Depósito",
-    "main_button_en": "Habilitar Autorización de Depósito"
+    "main_button_en": "Habilitar Autorización de Depósito",
+    "scan_qr": "escanear código qr ->"
 }
