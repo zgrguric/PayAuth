@@ -185,11 +185,16 @@
                 })
                 console.log('payload', payload)
 
-                xapp.openSignRequest({ uuid: payload.created.uuid })
+                xapp.openSignRequest({ uuid: payload.created.uuid }).then(async d => {
+                        // d (returned value) can be Error or return data:
+                        console.log('openSignRequest response:', d instanceof Error ? d.message : d)
+                        await this.pause(5_000)
+                        await this.getAccountInfo()
+                        await this.getAccountObjects()
+                    })
+                    .catch(e => console.log('Error:', e.message))
 
-                await this.pause(5_000)
-                await this.getAccountInfo()
-                await this.getAccountObjects()
+                
             },
             async authButton(account) {
                 const acc_payload = {
@@ -236,11 +241,14 @@
                 })
                 console.log('payload', payload)
 
-                xapp.openSignRequest({ uuid: payload.created.uuid })
-
-                await this.pause(5_000)
-                await this.getAccountInfo()
-                await this.getAccountObjects()
+                xapp.openSignRequest({ uuid: payload.created.uuid }).then(async d => {
+                        // d (returned value) can be Error or return data:
+                        console.log('openSignRequest response:', d instanceof Error ? d.message : d)
+                        await this.pause(5_000)
+                        await this.getAccountInfo()
+                        await this.getAccountObjects()
+                    })
+                    .catch(e => console.log('Error:', e.message))
             },
 
             async authEnableButton() {
@@ -285,11 +293,14 @@
                 })
                 console.log('payload', payload)
 
-                xapp.openSignRequest({ uuid: payload.created.uuid })
-
-                await this.pause(5_000)
-                await this.getAccountInfo()
-                await this.getAccountObjects()
+                xapp.openSignRequest({ uuid: payload.created.uuid }).then(async d => {
+                        // d (returned value) can be Error or return data:
+                        console.log('openSignRequest response:', d instanceof Error ? d.message : d)
+                        await this.pause(5_000)
+                        await this.getAccountInfo()
+                        await this.getAccountObjects()
+                    })
+                    .catch(e => console.log('Error:', e.message))
             },
             async Fee() {
                 const server_info = await this.client.send({ 'command': 'server_info' })
