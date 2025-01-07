@@ -1,0 +1,15 @@
+{
+    "app_title": "Odobrenje depozita",
+    "main_description": "Da bi primili novac od Payment transakcija dok imate uključenu opciju <em>Odobrenje depozita</em>, <strong>morate pred-autorizirati pošaljitelje tih transakcija</strong>. Transakcije računa koji nisu na listi će biti odbijene.",
+    "trouble_shoot": "Ako imate problema pri slanju novaca na vaš račun,  možete privremeno isključiti <em>Odobrenje depozita</em>.",
+    "not_enabled": "Nije omogućeno, nema ograničenja tko može slati novac na vaš račun.",
+    "auth_button": "autoriziraj",
+    "input_placeholder": "rAdresa za autorizirati",
+    "list_title": "Autorizirani računi",
+    "list_helper": "taknite za micanje računa",
+    "warning": "Niti jedan račun ne može uplatiti na ovaj wallet.",
+    "list_information": "Dodaj račine koji mogu uplaćivati na ovaj račun.",
+    "main_button_dis": "Onemogući odobrenje depozita",
+    "main_button_en": "Omogući odobrenje depozita",
+    "scan_qr": "skeniraj qr kod ->"
+}
