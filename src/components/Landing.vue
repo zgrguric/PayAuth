@@ -185,12 +185,15 @@
                 })
                 console.log('payload', payload)
 
+                const self = this
                 xapp.openSignRequest({ uuid: payload.created.uuid }).then(async d => {
                         // d (returned value) can be Error or return data:
                         console.log('openSignRequest response:', d instanceof Error ? d.message : d)
-                        await this.pause(5_000)
-                        await this.getAccountInfo()
-                        await this.getAccountObjects()
+                        
+                        await self.pause(5_000)
+                        console.log('refreshing after submission')
+                        await self.getAccountInfo()
+                        await self.getAccountObjects()
                     })
                     .catch(e => console.log('Error:', e.message))
 
@@ -241,12 +244,15 @@
                 })
                 console.log('payload', payload)
 
+                const self = this
                 xapp.openSignRequest({ uuid: payload.created.uuid }).then(async d => {
                         // d (returned value) can be Error or return data:
                         console.log('openSignRequest response:', d instanceof Error ? d.message : d)
-                        await this.pause(5_000)
-                        await this.getAccountInfo()
-                        await this.getAccountObjects()
+                        
+                        await self.pause(5_000)
+                        console.log('refreshing after submission')
+                        await self.getAccountInfo()
+                        await self.getAccountObjects()
                     })
                     .catch(e => console.log('Error:', e.message))
             },
@@ -293,12 +299,15 @@
                 })
                 console.log('payload', payload)
 
+                const self = this
                 xapp.openSignRequest({ uuid: payload.created.uuid }).then(async d => {
                         // d (returned value) can be Error or return data:
                         console.log('openSignRequest response:', d instanceof Error ? d.message : d)
-                        await this.pause(5_000)
-                        await this.getAccountInfo()
-                        await this.getAccountObjects()
+                        
+                        await self.pause(5_000)
+                        console.log('refreshing after submission')
+                        await self.getAccountInfo()
+                        await self.getAccountObjects()
                     })
                     .catch(e => console.log('Error:', e.message))
             },
