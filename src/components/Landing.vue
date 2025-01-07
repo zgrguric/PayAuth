@@ -58,8 +58,6 @@
             }
         },
         async mounted() {
-            console.log('setting local', this.$store.getters.getLocale)
-            this.$root.$i18n.locale = this.$store.getters.getLocale
             console.log('landing mounted...')
             // await this.fetchStorage()
             if (this.$store.getters.getAccount != '') {
