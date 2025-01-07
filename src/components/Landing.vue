@@ -235,6 +235,8 @@
                 console.log('payload', payload)
 
                 xapp.openSignRequest({ uuid: payload.created.uuid })
+
+                await this.pause(5_000)
                 await this.getAccountInfo()
                 await this.getAccountObjects()
             },
@@ -282,6 +284,8 @@
                 console.log('payload', payload)
 
                 xapp.openSignRequest({ uuid: payload.created.uuid })
+
+                await this.pause(5_000)
                 await this.getAccountInfo()
                 await this.getAccountObjects()
             },
