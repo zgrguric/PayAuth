@@ -1,0 +1,15 @@
+{
+  "app_title": "Autorització de Dipòsits",
+  "main_description": "Per rebre diners de transaccions de pagament, com que tens l'<em>Autorització de Dipòsits</em> habilitada, <strong>has de preautoritzar les adreces perquè et puguin fer pagaments</strong>. Qualsevol pagament provinent d'una adreça que no formi part de la llista d'adreces autoritzades serà rebutjat.",
+  "trouble_shoot": "Si tens dificultats per enviar un pagament al teu compte, pots deshabilitar temporalment l'<em>Autorització de Dipòsits</em>.",
+  "not_enabled": "No està habilitada, no hi ha restriccions pel que fa a les adreces que poden enviar pagaments al teu compte.",
+  "auth_button": "autoritzar",
+  "input_placeholder": "Adreça per autoritzar",
+  "list_title": "Adreces Autoritzades",
+  "list_helper": "toca per eliminar adreces",
+  "warning": "Cap compte no pot fer pagaments a aquest moneder.",
+  "list_information": "Afegeix adreces que puguin fer pagaments a aquest moneder.",
+  "main_button_dis": "Deshabilitar l'Autorització de Dipòsits",
+  "main_button_en": "Habilitar l'Autorització de Dipòsits",
+  "scan_qr": "escanejar códi QR ->"
+}
