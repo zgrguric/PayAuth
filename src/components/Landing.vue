@@ -67,7 +67,7 @@
             }
             this.isLoading = false
 
-            console.log('XXXXX', this.$t.local)
+            console.log('XXXXX', this.$i18n)
         },
         computed: {
             ledger() {
