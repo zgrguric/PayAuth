@@ -135,7 +135,7 @@
                     'limit': 100
                 }
                 const account_objects = await this.client.send(acc_payload)
-                this.accountObjects = account_objects.account_objects
+                this.accountObjects = (account_objects.account_objects !== undefined) ? account_objects.account_objects : {}
             },
             async getAccountInfo() {
                 const acc_payload = {
