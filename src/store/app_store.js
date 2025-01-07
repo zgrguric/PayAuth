@@ -8,7 +8,8 @@ export const AppStore = {
         },
         account: '',
         user_token: '',
-        ledger: 0
+        ledger: 0,
+        locale: 'en'
     }),
     actions: {
         xummTokenData({commit}, data) {
@@ -22,6 +23,9 @@ export const AppStore = {
         },
         setLedger({commit}, ledger) {
             commit('LEDGER', ledger)
+        },
+        setLocale({commit}, locale) {
+            commit('LOCALE', locale)
         }
     },
     mutations: {
@@ -36,6 +40,9 @@ export const AppStore = {
         },
         LEDGER(state, ledger) {
             state.ledger = ledger
+        },
+        LOCALE(state, locale) {
+            state.locale = locale
         }
     },
     getters: {
@@ -53,6 +60,9 @@ export const AppStore = {
         },
         getLedger: state => {
             return state.ledger
+        },
+        getLocale: state => {
+            return state.locale
         }
     }
 }

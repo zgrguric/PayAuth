@@ -61,6 +61,8 @@
             async jwtFlow() {
                 const tokenData = await this.Sdk.getOttData()
                 console.log('tokenData', tokenData)
+                console.log('locale', tokenData.locale)
+                this.$store.dispatch('setLocale', tokenData.locale)
                 this.$store.dispatch('xummTokenData', tokenData)
                 console.log('account', tokenData.account)
                 this.$store.dispatch('setAccount', tokenData.account)
