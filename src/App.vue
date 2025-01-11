@@ -54,7 +54,7 @@
             await this.jwtFlow()
             this.components.Landing = true
             this.isLoading = false
-            await this.xAppListeners()
+            // await this.xAppListeners()
         },
         methods: {
             async jwtFlow() {
@@ -137,9 +137,11 @@
             // },
 
             selectDestination() {
+                const self = this
                 xapp.selectDestination({ ignoreDestinationTag: false })
                 xapp.on('destination', data => {
                     console.log('Destination', data.destination)
+                    console.log('address', data.destination.address)
                     if (data.destination?.address !== undefined) {
                         self.qr_scan = data.destination?.address
                     }
