@@ -8,7 +8,7 @@
     </main>
 
     <footer  v-if="!isLoading" class="container bg-black footer fixed-bottom start-50 translate-middle-x text-center">
-        <button @click="openScan" class="btn btn-default mt-2 mb-4" role="button" id="open-sign">
+        <button @click="selectDestination" class="btn btn-default mt-2 mb-4" role="button" id="open-sign">
             <img src="/scan-touch-icon.png" class="border border-0 rounded-3" alt="open sign" width="55" />
         </button>
     </footer>
@@ -135,22 +135,33 @@
             //         })
             //         .catch(e => console.log('Error:', e.message))
             // },
-            async xAppListeners() {
-                const self = this
-                xapp.on('qr', async function (data) {                    
-                    console.log('QR scanned / cancelled', data)
-                    console.log('SCANNED A QR CODE')
-                    console.log('qrContents', data?.qrContents)
-                    self.qr_scan = data?.qrContents
+
+            selectDestination() {
+                xapp.selectDestination({ ignoreDestinationTag: false })
+                xapp.on('destination', data => {
+                    console.log('Destination', data.destination)
+                    if (data.destination?.address !== undefined) {
+                        self.qr_scan = data.destination?.address
+                    }
                 })
             },
-            async openScan() {
-                xapp.scanQr()
-                    .then(d => {
-                        console.log('scanQr response:', d instanceof Error ? d.message : d)
-                    })
-                    .catch(e => console.log('Error:', e.message))
-            },
+
+            // async xAppListeners() {
+            //     const self = this
+            //     xapp.on('qr', async function (data) {                    
+            //         console.log('QR scanned / cancelled', data)
+            //         console.log('SCANNED A QR CODE')
+            //         console.log('qrContents', data?.qrContents)
+            //         self.qr_scan = data?.qrContents
+            //     })
+            // },
+            // async openScan() {
+            //     xapp.scanQr()
+            //         .then(d => {
+            //             console.log('scanQr response:', d instanceof Error ? d.message : d)
+            //         })
+            //         .catch(e => console.log('Error:', e.message))
+            // },
             clearScan() {
                 console.log('clear scan')
                 this.qr_scan = undefined
