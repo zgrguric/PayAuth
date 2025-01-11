@@ -46,7 +46,7 @@
 
     export default {
         name: 'Landing',
-        props: ['client', 'Sdk', 'nodetype'],
+        props: ['client', 'Sdk', 'nodetype', 'qr_scan'],
         emits: ['clear'],
         data() {
             return {
