@@ -13,17 +13,11 @@
                 </div>
 
                 
-                    <div class="stepwizard">
-                        <div class="col-1 stepwizard-step">
-                            <a href="#step-1" type="button" class="btn btn-primary rounded-circle" :disabled="step === 1 ? '':'disabled'">1</a>
-                        </div>
-                        <div class="col-1 stepwizard-step">
-                            <a href="#step-2" type="button" class="btn btn-secondary rounded-circle" :disabled="step === 2 ? '':'disabled'">2</a>
-                        </div>
-                        <div class="col-1 stepwizard-step">
-                            <a href="#step-3" type="button" class="btn btn-secondary rounded-circle" :disabled="step === 3 ? '':'disabled'">3</a>
-                        </div>
-                    </div>
+                <div class="stepwizard">
+                    <a href="#step-1" type="button" class="btn btn-primary rounded-circle" :disabled="step === 1 ? '':'disabled'">1</a>
+                    <a href="#step-2" type="button" class="btn btn-secondary rounded-circle ms-2" :disabled="step === 2 ? '':'disabled'">2</a>
+                    <a href="#step-3" type="button" class="btn btn-secondary rounded-circle ms-2" :disabled="step === 3 ? '':'disabled'">3</a>
+                </div>
             </div>
         </div>
     </div>
