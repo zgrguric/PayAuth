@@ -27,15 +27,15 @@
 
                 <div class="stepwizard-row setup-panel">
                     <div class="stepwizard-step">
-                        <a href="#step-1" type="button" class="btn btn-primary btn-circle" :disabled="step === 1 ? '':'disabled'">1</a>
+                        <a href="#step-1" type="button" class="btn btn-primary rounded-circle" :disabled="step === 1 ? '':'disabled'">1</a>
                         <p>Step 1</p>
                     </div>
                     <div class="stepwizard-step">
-                        <a href="#step-2" type="button" class="btn btn-default btn-circle" :disabled="step === 2 ? '':'disabled'">2</a>
+                        <a href="#step-2" type="button" class="btn btn-default rounded-circle" :disabled="step === 2 ? '':'disabled'">2</a>
                         <p>Step 2</p>
                     </div>
                     <div class="stepwizard-step">
-                        <a href="#step-3" type="button" class="btn btn-default btn-circle" :disabled="step === 3 ? '':'disabled'">3</a>
+                        <a href="#step-3" type="button" class="btn btn-default rounded-circle" :disabled="step === 3 ? '':'disabled'">3</a>
                         <p>Step 3</p>
                     </div>
                 </div>
