@@ -8,13 +8,22 @@
                     <a href="#step-3" type="button" class="btn btn-secondary rounded-circle ms-2" :disabled="step === 3 ? '':'disabled'">3</a>
                 </div>
 
-                <div class="card" style="width: 18rem;">
+                <div v-if="step === 1" class="card">
                     <img src="https://placehold.co/400" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">First challenge</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">answer a</a>
-                        <a href="#" class="btn btn-primary ms-2">answer b</a>
+                        <a href="#" @click="advanceStep()" class="btn btn-primary">answer a</a>
+                        <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">answer b</a>
+                    </div>
+                </div>
+                <div v-if="step === 2" class="card">
+                    <img src="https://placehold.co/400" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Second challenge</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" @click="advanceStep()" class="btn btn-primary">answer a</a>
+                        <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">answer b</a>
                     </div>
                 </div>
             </div>
@@ -134,6 +143,9 @@
             }
         },
         methods: {
+            advanceStep() {
+                this.step ++
+            },
             htmlToText: function (html) {
                 this.utilityEl.innerHTML = html
                 return this.utilityEl.textContent
