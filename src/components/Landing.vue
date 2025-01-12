@@ -71,8 +71,8 @@
             <div v-if="failed">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Forth challenge</h5>
-                        <p class="card-text">You failed to meet the mimimum undesrtanding needed to use this app. Please review the material at <button class="btn btn-sm btn-primary" @click="failedTest()">XRPL.org</button></p>
+                        <h5 class="card-title">Insufficent knowladge to use this xApp</h5>
+                        <p class="card-text">You failed to meet the mimimum understanding needed to use this app. Please review the material at <button class="btn btn-sm btn-primary" @click="failedTest()">XRPL.org</button></p>
                     </div>
                 </div>
             </div>
@@ -140,6 +140,11 @@
         },
         async mounted() {
             console.log('landing mounted...')
+            console.log('fetching old score', this.$store.getters.getScore)
+            this.score = this.$store.getters.getScore
+            if (this.score >= 3) {
+                this.challenge = false
+            }
             // await this.fetchStorage()
             if (this.$store.getters.getAccount != '') {
                 console.log('getAccount', this.$store.getters.getAccount)
@@ -206,6 +211,7 @@
                 if (this.step > 4 && this.score < 3) {
                     this.failed = true
                 }
+                this.$store.dispatch('setTestScore', this.score)
             },
             htmlToText: function (html) {
                 this.utilityEl.innerHTML = html

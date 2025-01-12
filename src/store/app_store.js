@@ -9,7 +9,8 @@ export const AppStore = {
         account: '',
         user_token: '',
         ledger: 0,
-        locale: 'en'
+        locale: 'en',
+        score: 0
     }),
     actions: {
         xummTokenData({commit}, data) {
@@ -26,6 +27,9 @@ export const AppStore = {
         },
         setLocale({commit}, locale) {
             commit('LOCALE', locale)
+        },
+        setTestScore({commit}, score) {
+            commit('SCORE', score)
         }
     },
     mutations: {
@@ -43,6 +47,10 @@ export const AppStore = {
         },
         LOCALE(state, locale) {
             state.locale = locale
+        },
+        SCORE(state, score) {
+            state.score = score
+            localStorage.setItem('score', JSON.stringify(score))
         }
     },
     getters: {
@@ -63,6 +71,12 @@ export const AppStore = {
         },
         getLocale: state => {
             return state.locale
+        },
+        getScore: state => {
+            if (state.score === 0 && localStorage.getItem('score')) {
+                return JSON.parse(localStorage.getItem('score'))                
+            }
+            return state.score
         }
     }
 }
