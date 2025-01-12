@@ -3,10 +3,10 @@
         <div class="container-fluid py-5">
             <div v-if="challenge && !failed">
                 <div class="stepwizard mb-2">
-                    <a href="#step-1" type="button" :class="step === 1 ? 'btn btn-primary rounded-circle': 'btn btn-secondary rounded-circle'" :disabled="step === 1 ? '':'disabled'">1</a>
-                    <a href="#step-2" type="button" :class="step === 2 ? 'btn btn-primary rounded-circle ms-2': 'btn btn-secondary rounded-circle ms-2'" :disabled="step === 2 ? '':'disabled'">2</a>
-                    <a href="#step-3" type="button" :class="step === 3 ? 'btn btn-primary rounded-circle ms-2': 'btn btn-secondary rounded-circle ms-2'" :disabled="step === 3 ? '':'disabled'">3</a>
-                    <a href="#step-4" type="button" :class="step === 4 ? 'btn btn-primary rounded-circle ms-2': 'btn btn-secondary rounded-circle ms-2'" :disabled="step === 4 ? '':'disabled'">4</a>
+                    <a href="#step-1" type="button" :class="step === 1 ? 'btn bg-green rounded-circle': 'btn btn-secondary rounded-circle'" :disabled="step === 1 ? '':'disabled'">1</a>
+                    <a href="#step-2" type="button" :class="step === 2 ? 'btn bg-green rounded-circle ms-2': 'btn btn-secondary rounded-circle ms-2'" :disabled="step === 2 ? '':'disabled'">2</a>
+                    <a href="#step-3" type="button" :class="step === 3 ? 'btn bg-green rounded-circle ms-2': 'btn btn-secondary rounded-circle ms-2'" :disabled="step === 3 ? '':'disabled'">3</a>
+                    <a href="#step-4" type="button" :class="step === 4 ? 'btn bg-green rounded-circle ms-2': 'btn btn-secondary rounded-circle ms-2'" :disabled="step === 4 ? '':'disabled'">4</a>
                 </div>
 
                 <div v-if="step === 1" class="card">
@@ -474,6 +474,8 @@
         border-color: #e6dbb9;
     }
 
-
+    .bg-green {
+        background-color: #00e56a !important;
+    }
     
 </style>
