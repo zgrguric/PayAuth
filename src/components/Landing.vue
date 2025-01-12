@@ -8,23 +8,22 @@
                         <h5 class="card-title">First challenge</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="btn btn-primary">answer a</a>
-                        <a href="#" class="btn btn-primary">answer b</a>
+                        <a href="#" class="btn btn-primary ms-2">answer b</a>
                     </div>
                 </div>
 
-                <div class="row">
+                
                     <div class="stepwizard">
-                        <div class="col stepwizard-step">
+                        <div class="col-1 stepwizard-step">
                             <a href="#step-1" type="button" class="btn btn-primary rounded-circle" :disabled="step === 1 ? '':'disabled'">1</a>
                         </div>
-                        <div class="col stepwizard-step">
-                            <a href="#step-2" type="button" class="btn btn-default rounded-circle" :disabled="step === 2 ? '':'disabled'">2</a>
+                        <div class="col-1 stepwizard-step">
+                            <a href="#step-2" type="button" class="btn btn-secondary rounded-circle" :disabled="step === 2 ? '':'disabled'">2</a>
                         </div>
-                        <div class="col stepwizard-step">
-                            <a href="#step-3" type="button" class="btn btn-default rounded-circle" :disabled="step === 3 ? '':'disabled'">3</a>
+                        <div class="col-1 stepwizard-step">
+                            <a href="#step-3" type="button" class="btn btn-secondary rounded-circle" :disabled="step === 3 ? '':'disabled'">3</a>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>
