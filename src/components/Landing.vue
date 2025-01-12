@@ -398,4 +398,21 @@
         color: #000;
         border-color: #e6dbb9;
     }
+
+
+    .stepwizard-step p {
+        margin-top: 10px;
+    }
+    .stepwizard-row {
+        display: table-row;
+    }
+    .stepwizard {
+        display: table;
+        width: 50%;
+        position: relative;
+    }
+    .stepwizard-step button[disabled] {
+        opacity: 1 !important;
+        filter: alpha(opacity=100) !important;
+    }
 </style>
