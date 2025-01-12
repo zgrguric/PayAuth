@@ -13,7 +13,7 @@
                     <!-- img src="https://placehold.co/400" class="card-img-top" alt="..." -->
                     <div class="card-body">
                         <h5 class="card-title">{{ $t('challenge_1') }}</h5>
-                        <p class="card-text">{{ $t('challenge_body_1') }}</p>
+                        <p class="card-text" v-html="$t('challenge_body_1')"></p>
                         <ol type="A">
                             <li>{{ $t('challenge_1_ans_a') }}</li>
                             <li>{{ $t('challenge_1_ans_b') }}</li>
@@ -28,7 +28,7 @@
                     <!-- img src="https://placehold.co/400" class="card-img-top" alt="..." -->
                     <div class="card-body">
                         <h5 class="card-title">{{ $t('challenge_2') }}</h5>
-                        <p class="card-text">{{ $t('challenge_body_2') }}</p>
+                        <p class="card-text" v-html="$t('challenge_body_2')"></p>
                         <ol type="A">
                             <li>{{ $t('challenge_2_ans_a') }}</li>
                             <li>{{ $t('challenge_2_ans_b') }}</li>
@@ -43,7 +43,7 @@
                     <!-- img src="https://placehold.co/400" class="card-img-top" alt="..." -->
                     <div class="card-body">
                         <h5 class="card-title">{{ $t('challenge_3') }}</h5>
-                        <p class="card-text">{{ $t('challenge_body_3') }}</p>
+                        <p class="card-text" v-html="$t('challenge_body_3')"></p>
                         <ol type="A">
                             <li>{{ $t('challenge_3_ans_a') }}</li>
                             <li>{{ $t('challenge_3_ans_b') }}</li>
@@ -58,7 +58,7 @@
                     <!-- img src="https://placehold.co/400" class="card-img-top" alt="..." -->
                     <div class="card-body">
                         <h5 class="card-title">{{ $t('challenge_4') }}</h5>
-                        <p class="card-text">{{ $t('challenge_body_4') }}</p>
+                        <p class="card-text" v-html="$t('challenge_body_4')"></p>
                         <ol type="A">
                             <li>{{ $t('challenge_4_ans_a') }}</li>
                             <li>{{ $t('challenge_4_ans_b') }}</li>
