@@ -155,7 +155,7 @@
             advanceStep() {
                 this.step ++
                 if (this.step > 3) {
-                   this.challenge == false 
+                   this.challenge = false 
                 }
             },
             htmlToText: function (html) {
