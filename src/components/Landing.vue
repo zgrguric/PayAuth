@@ -3,9 +3,9 @@
         <div class="container-fluid py-5">
             <div v-if="challenge">
                 <div class="stepwizard mb-2">
-                    <a href="#step-1" type="button" class="btn btn-primary rounded-circle" :disabled="step === 1 ? '':'disabled'">1</a>
-                    <a href="#step-2" type="button" class="btn btn-secondary rounded-circle ms-2" :disabled="step === 2 ? '':'disabled'">2</a>
-                    <a href="#step-3" type="button" class="btn btn-secondary rounded-circle ms-2" :disabled="step === 3 ? '':'disabled'">3</a>
+                    <a href="#step-1" type="button" :class="step === 1 ? 'btn btn-primary rounded-circle': 'btn btn-secondary rounded-circle'" :disabled="step === 1 ? '':'disabled'">1</a>
+                    <a href="#step-2" type="button" :class="step === 2 ? 'btn btn-primary rounded-circle ms-2': 'btn btn-secondary rounded-circle ms-2'" :disabled="step === 2 ? '':'disabled'">2</a>
+                    <a href="#step-3" type="button" :class="step === 3 ? 'btn btn-primary rounded-circle ms-2': 'btn btn-secondary rounded-circle ms-2'" :disabled="step === 3 ? '':'disabled'">3</a>
                 </div>
 
                 <div v-if="step === 1" class="card">
@@ -21,6 +21,15 @@
                     <img src="https://placehold.co/400" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Second challenge</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" @click="advanceStep()" class="btn btn-primary">answer a</a>
+                        <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">answer b</a>
+                    </div>
+                </div>
+                <div v-if="step === 3" class="card">
+                    <img src="https://placehold.co/400" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Third challenge</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" @click="advanceStep()" class="btn btn-primary">answer a</a>
                         <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">answer b</a>
@@ -145,6 +154,9 @@
         methods: {
             advanceStep() {
                 this.step ++
+                if (this.step > 3) {
+                   this.challenge == false 
+                }
             },
             htmlToText: function (html) {
                 this.utilityEl.innerHTML = html
