@@ -12,12 +12,12 @@
                 <div v-if="step === 1" class="card">
                     <!-- img src="https://placehold.co/400" class="card-img-top" alt="..." -->
                     <div class="card-body">
-                        <h5 class="card-title">First challenge</h5>
-                        <p class="card-text">When <em>Deposit Authorization</em> is enabled can you with draw funds from an exchange to this wallet?</p>
+                        <h5 class="card-title">{{ $t('challenge_1') }}</h5>
+                        <p class="card-text">{{ $t('challenge_body_1') }}</p>
                         <ol type="A">
-                            <li>No value can be recieved</li>
-                            <li>Only if an account is authorized</li>
-                            <li>Only accounts in your xaman address book will be accepted</li>
+                            <li>{{ $t('challenge_1_ans_a') }}</li>
+                            <li>{{ $t('challenge_1_ans_b') }}</li>
+                            <li>{{ $t('challenge_1_ans_c') }}</li>
                         </ol>
                         <a href="#" @click="advanceStep()" class="btn btn-primary">A</a>
                         <a href="#" @click="advanceStep(true)" class="btn btn-primary ms-2">B</a>
@@ -27,12 +27,12 @@
                 <div v-if="step === 2" class="card">
                     <!-- img src="https://placehold.co/400" class="card-img-top" alt="..." -->
                     <div class="card-body">
-                        <h5 class="card-title">Second challenge</h5>
-                        <p class="card-text">If you have added accounts to your authorized list and <em>Deposit Authorization</em> is dissabled. Will your account block any transactions?</p>
+                        <h5 class="card-title">{{ $t('challenge_2') }}</h5>
+                        <p class="card-text">{{ $t('challenge_body_2') }}</p>
                         <ol type="A">
-                            <li>No transactions will be blocked</li>
-                            <li>Accounts in the Deposit Authorization can only make deposits</li>
-                            <li>Only spam transactions will be blocked</li>
+                            <li>{{ $t('challenge_2_ans_a') }}</li>
+                            <li>{{ $t('challenge_2_ans_b') }}</li>
+                            <li>{{ $t('challenge_2_ans_c') }}</li>
                         </ol>
                         <a href="#" @click="advanceStep(true)" class="btn btn-primary">A</a>
                         <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">B</a>
@@ -42,12 +42,12 @@
                 <div v-if="step === 3" class="card">
                     <!-- img src="https://placehold.co/400" class="card-img-top" alt="..." -->
                     <div class="card-body">
-                        <h5 class="card-title">Third challenge</h5>
-                        <p class="card-text">If you incorrecly authorized an exchanges hotwallet, for example you only add their deposit address and not their with drawl address. Your with drawl transaction to your wallet now fails at the exchange, what do you do?</p>
+                        <h5 class="card-title">{{ $t('challenge_3') }}</h5>
+                        <p class="card-text">{{ $t('challenge_body_3') }}</p>
                         <ol type="A">
-                            <li>Post on twitter blaming the XRPL does not work</li>
-                            <li>Accounts in the Deposit Authorization list can only make deposits</li>
-                            <li>Dissable Deposit Authorization and contact the exchange so they retry the withdrawl</li>
+                            <li>{{ $t('challenge_3_ans_a') }}</li>
+                            <li>{{ $t('challenge_3_ans_b') }}</li>
+                            <li>{{ $t('challenge_3_ans_c') }}</li>
                         </ol>
                         <a href="#" @click="advanceStep()" class="btn btn-primary">A</a>
                         <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">B</a>
@@ -57,11 +57,11 @@
                 <div v-if="step === 4" class="card">
                     <!-- img src="https://placehold.co/400" class="card-img-top" alt="..." -->
                     <div class="card-body">
-                        <h5 class="card-title">Forth challenge</h5>
-                        <p class="card-text">Can Deposit Authorization be toggled on and off? Where by you temporarily allow any transaction.</p>
+                        <h5 class="card-title">{{ $t('challenge_4') }}</h5>
+                        <p class="card-text">{{ $t('challenge_body_4') }}</p>
                         <ol type="A">
-                            <li>You can toggle Deposit Authorization</li>
-                            <li>Once its active it can not be dissabled</li>
+                            <li>{{ $t('challenge_4_ans_a') }}</li>
+                            <li>{{ $t('challenge_4_ans_b') }}</li>
                         </ol>
                         <a href="#" @click="advanceStep(true)" class="btn btn-primary">A</a>
                         <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">B</a>
@@ -71,8 +71,8 @@
             <div v-if="failed">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Insufficent knowladge to use this xApp</h5>
-                        <p class="card-text">You failed to meet the mimimum understanding needed to use this app. Please review the material at <button class="btn btn-sm btn-primary" @click="failedTest()">XRPL.org</button></p>
+                        <h5 class="card-title">{{ $t('fail_heading') }}</h5>
+                        <p class="card-text">{{ $t('fail_body') }} <button class="btn btn-sm btn-primary" @click="failedTest()">XRPL.org</button></p>
                     </div>
                 </div>
             </div>

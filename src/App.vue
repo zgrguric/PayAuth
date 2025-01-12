@@ -7,7 +7,7 @@
         <Viewer v-if="components.Viewer" :client="client" :Sdk="Sdk" :nodetype="nodetype"></Viewer>
     </main>
 
-    <footer  v-if="!isLoading" class="container bg-black footer fixed-bottom start-50 translate-middle-x text-center">
+    <footer  v-if="!isLoading && $store.getters.getScore >= 3" class="container bg-black footer fixed-bottom start-50 translate-middle-x text-center">
         <button @click="selectDestination" class="btn btn-default mt-2 mb-4" role="button" id="open-sign">
             <img src="/scan-touch-icon.png" class="border border-0 rounded-3" alt="open sign" width="55" />
         </button>
@@ -141,8 +141,9 @@
                 xapp.selectDestination({ ignoreDestinationTag: false })
                 xapp.on('destination', data => {
                     console.log('Destination', data.destination)
-                    console.log('address', data.destination.address)
+                    
                     if (data.destination?.address !== undefined) {
+                        console.log('address', data.destination.address)
                         self.qr_scan = data.destination?.address
                     }
                 })

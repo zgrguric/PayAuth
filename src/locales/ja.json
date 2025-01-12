@@ -10,6 +10,5 @@
     "warning": "このウォレットには送金できません。",
     "list_information": "このウォレットに送金できるアカウントを追加してください。",
     "main_button_dis": "事前承認を無効にする",
-    "main_button_en": "事前承認を有効にする",
-    "scan_qr": "QRコードをスキャン ->"
+    "main_button_en": "事前承認を有効にする"
 }

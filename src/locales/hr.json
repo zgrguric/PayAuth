@@ -10,6 +10,5 @@
     "warning": "Niti jedan račun ne može uplatiti na ovaj wallet.",
     "list_information": "Dodaj račine koji mogu uplaćivati na ovaj račun.",
     "main_button_dis": "Onemogući odobrenje depozita",
-    "main_button_en": "Omogući odobrenje depozita",
-    "scan_qr": "skeniraj qr kod ->"
+    "main_button_en": "Omogući odobrenje depozita"
 }
