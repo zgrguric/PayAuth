@@ -48,7 +48,7 @@
             }
         },
         async mounted() {
-            
+            this.$store.dispatch('setTestScore', 1)
             console.log('starting...')
             if (this.components.Landing) { return }
             await this.jwtFlow()
