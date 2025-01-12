@@ -10,14 +10,14 @@
                 </div>
 
                 <div v-if="step === 1" class="card">
-                    <img src="https://placehold.co/400" class="card-img-top" alt="...">
+                    <!-- img src="https://placehold.co/400" class="card-img-top" alt="..." -->
                     <div class="card-body">
                         <h5 class="card-title">First challenge</h5>
                         <p class="card-text">When <em>Deposit Authorization</em> is enabled can you with draw funds from an exchange to this wallet?</p>
                         <ol type="A">
                             <li>No value can be recieved</li>
-                            <li>Only if account is authorized</li>
-                            <li>Only accounts in you address book will be accepted</li>
+                            <li>Only if an account is authorized</li>
+                            <li>Only accounts in your xaman address book will be accepted</li>
                         </ol>
                         <a href="#" @click="advanceStep()" class="btn btn-primary">A</a>
                         <a href="#" @click="advanceStep(true)" class="btn btn-primary ms-2">B</a>
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div v-if="step === 2" class="card">
-                    <img src="https://placehold.co/400" class="card-img-top" alt="...">
+                    <!-- img src="https://placehold.co/400" class="card-img-top" alt="..." -->
                     <div class="card-body">
                         <h5 class="card-title">Second challenge</h5>
                         <p class="card-text">If you have added accounts to your authorized list and <em>Deposit Authorization</em> is dissabled. Will your account block any transactions?</p>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div v-if="step === 3" class="card">
-                    <img src="https://placehold.co/400" class="card-img-top" alt="...">
+                    <!-- img src="https://placehold.co/400" class="card-img-top" alt="..." -->
                     <div class="card-body">
                         <h5 class="card-title">Third challenge</h5>
                         <p class="card-text">If you incorrecly authorized an exchanges hotwallet, for example you only add their deposit address and not their with drawl address. Your with drawl transaction to your wallet now fails at the exchange, what do you do?</p>
@@ -55,10 +55,10 @@
                     </div>
                 </div>
                 <div v-if="step === 4" class="card">
-                    <img src="https://placehold.co/400" class="card-img-top" alt="...">
+                    <!-- img src="https://placehold.co/400" class="card-img-top" alt="..." -->
                     <div class="card-body">
                         <h5 class="card-title">Forth challenge</h5>
-                        <p class="card-text">Can Deposit Authorization be toggled on and off?</p>
+                        <p class="card-text">Can Deposit Authorization be toggled on and off? Where by you temporarily allow any transaction.</p>
                         <ol type="A">
                             <li>You can toggle Deposit Authorization</li>
                             <li>Once its active it can not be dissabled</li>
