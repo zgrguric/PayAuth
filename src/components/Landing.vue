@@ -72,7 +72,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Forth challenge</h5>
-                        <p class="card-text">You failed to meet the mimimum undesrtanding needed to use this app. Please review the material at <a href="https://xrpl.org/docs/concepts/accounts/depositauth">xrpl.org</a></p>
+                        <p class="card-text">You failed to meet the mimimum undesrtanding needed to use this app. Please review the material at <button class="btn btn-sm btn-primary" @click="failedTest()">XRPL.org</button></p>
                     </div>
                 </div>
             </div>
@@ -194,6 +194,9 @@
             }
         },
         methods: {
+            failedTest() {
+                xapp.openBrowser({ url: 'https://xrpl.org/docs/concepts/accounts/depositauth' })
+            },
             advanceStep(correct) {
                 this.step ++
                 this.score = (correct) ? this.score + 1 : this.score
