@@ -30,6 +30,6 @@
     "challenge_3_ans_c": "Disable Deposit Authorization and contact the exchange so they retry the with drawl",
     "challenge_4_ans_a": "You can toggle Deposit Authorization",
     "challenge_4_ans_b": "Once its active it can not be disabled",
-    "fail_heading": "Insufficent knowladge to use this xApp",
+    "fail_heading": "Insufficent knowledge to use this xApp",
     "fail_body": "You failed to meet the mimimum understanding needed to use this app. Please review the material at"
 }
