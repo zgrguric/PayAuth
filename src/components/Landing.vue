@@ -5,7 +5,7 @@
             <div class="col-md-8 fs-4">                
                 <p class="text-muted text-end fs-6"><span class="fancy-font">PayAuth</span>  by three</p>
             </div>
-            <div class="col-12 fs-6 mb-5">
+            <div v-if="!challenge" class="col-12 fs-6 mb-5">
                 <h3>{{ $t('app_title') }}</h3>
                 <p v-if="depositAuth" v-html="$t('main_description')"></p><p v-if="depositAuth" v-html="$t('trouble_shoot')"></p>
                 <p v-if="!depositAuth">{{ $t('not_enabled') }}</p>
@@ -14,26 +14,49 @@
             <div v-if="alert !== undefined" class="alert alert-warning" role="alert">
                 {{ alert }}
             </div>
+            <div v-if="challenge">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://placehold.co/400" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">First challenge</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">answer a</a>
+                        <a href="#" class="btn btn-primary">answer b</a>
+                    </div>
+                </div>
 
-            <!-- div class="input-group">
-                <input type="text" class="form-control" aria-label="Default" aria-describedby="auth-address" :placeholder="$t('input_placeholder')" v-model="auth">
-                <button class="btn btn-sm btn btn-primary" @click="authButton()">{{ $t('auth_button') }}</button>
-            </div -->
-
-            <div v-if="accountObjects !== null && Object.keys(accountObjects).length > 0" class="col-12 fs-6 mt-5 mb-5">
-                <h5>{{ $t('list_title') }}</h5>
-                
-                <div v-for="account in accountObjects"> <button class="mt-2 btn btn-sm btn btn-outline-primary" @click="removeButton(account.Authorize)">{{ account.Authorize }}</button></div>
-                <small>{{ $t('list_helper') }}</small>
+                <div class="stepwizard-row setup-panel">
+                    <div class="stepwizard-step">
+                        <a href="#step-1" type="button" class="btn btn-primary btn-circle" :disabled="step === 1 ? '':'disabled'">1</a>
+                        <p>Step 1</p>
+                    </div>
+                    <div class="stepwizard-step">
+                        <a href="#step-2" type="button" class="btn btn-default btn-circle" :disabled="step === 2 ? '':'disabled'">2</a>
+                        <p>Step 2</p>
+                    </div>
+                    <div class="stepwizard-step">
+                        <a href="#step-3" type="button" class="btn btn-default btn-circle" :disabled="step === 3 ? '':'disabled'">3</a>
+                        <p>Step 3</p>
+                    </div>
+                </div>
             </div>
-            <div v-if="accountObjects === null || Object.keys(accountObjects).length === 0" class="col-12 fs-6 mt-5 mb-5">
-                <h5>{{ $t('list_title') }}</h5>
-                <p v-if="depositAuth" class="text-danger">{{ $t('warning') }}</p>
-                <p v-if="!depositAuth">{{ $t('list_information') }}</p>
-            </div>
 
-            <div class="col-12 fs-6 mb-5">
-                <button :class="depositAuth ? 'btn btn-sm btn-danger':'btn btn-sm btn-primary'" @click="authEnableButton()">{{ depositAuth ? $t('main_button_dis'): $t('main_button_en') }}</button>
+            <div v-if="!challenge">
+                <div v-if="accountObjects !== null && Object.keys(accountObjects).length > 0" class="col-12 fs-6 mt-5 mb-5">
+                    <h5>{{ $t('list_title') }}</h5>
+                    
+                    <div v-for="account in accountObjects"> <button class="mt-2 btn btn-sm btn btn-outline-primary" @click="removeButton(account.Authorize)">{{ account.Authorize }}</button></div>
+                    <small>{{ $t('list_helper') }}</small>
+                </div>
+                <div v-if="accountObjects === null || Object.keys(accountObjects).length === 0" class="col-12 fs-6 mt-5 mb-5">
+                    <h5>{{ $t('list_title') }}</h5>
+                    <p v-if="depositAuth" class="text-danger">{{ $t('warning') }}</p>
+                    <p v-if="!depositAuth">{{ $t('list_information') }}</p>
+                </div>
+
+                <div class="col-12 fs-6 mb-5">
+                    <button :class="depositAuth ? 'btn btn-sm btn-danger':'btn btn-sm btn-primary'" @click="authEnableButton()">{{ depositAuth ? $t('main_button_dis'): $t('main_button_en') }}</button>
+                </div>
             </div>
         </div>
     </div>
@@ -54,6 +77,8 @@
                 auth: undefined,
                 isLoading: true,
                 depositAuth: false,
+                challenge: true,
+                step: 1,
                 accountObjects: {}
             }
         },
