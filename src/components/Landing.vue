@@ -13,11 +13,11 @@
                     <img src="https://placehold.co/400" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">First challenge</h5>
-                        <p class="card-text">When Deposit Authorization is enabled can you with draw funds from an exchange to this wallet?</p>
+                        <p class="card-text">When <em>Deposit Authorization</em> is enabled can you with draw funds from an exchange to this wallet?</p>
                         <ol type="A">
-                            <li>no value can be recieved</li>
-                            <li>only if account is authorized</li>
-                            <li>only accounts in you address book will be accepted</li>
+                            <li>No value can be recieved</li>
+                            <li>Only if account is authorized</li>
+                            <li>Only accounts in you address book will be accepted</li>
                         </ol>
                         <a href="#" @click="advanceStep()" class="btn btn-primary">A</a>
                         <a href="#" @click="advanceStep(true)" class="btn btn-primary ms-2">B</a>
@@ -28,11 +28,11 @@
                     <img src="https://placehold.co/400" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Second challenge</h5>
-                        <p class="card-text">If you have added accounts to your authorized list and Deposit Authorization is dissabled. Will your account block any transactions?</p>
+                        <p class="card-text">If you have added accounts to your authorized list and <em>Deposit Authorization</em> is dissabled. Will your account block any transactions?</p>
                         <ol type="A">
-                            <li>no transactions will be blocked</li>
-                            <li>accounts in the Deposit Authorization can only make deposits</li>
-                            <li>only spam transactions will be blocked</li>
+                            <li>No transactions will be blocked</li>
+                            <li>Accounts in the Deposit Authorization can only make deposits</li>
+                            <li>Only spam transactions will be blocked</li>
                         </ol>
                         <a href="#" @click="advanceStep(true)" class="btn btn-primary">A</a>
                         <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">B</a>
@@ -43,11 +43,11 @@
                     <img src="https://placehold.co/400" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Third challenge</h5>
-                        <p class="card-text">If you incorrecly authorize an exchanges hotwallet, for example you only add their deposit address and not their with drawl address. You transaction now fails, what do you do?</p>
+                        <p class="card-text">If you incorrecly authorized an exchanges hotwallet, for example you only add their deposit address and not their with drawl address. Your with drawl transaction to your wallet now fails at the exchange, what do you do?</p>
                         <ol type="A">
-                            <li>post on twitter blaming the XRPL does not work</li>
-                            <li>accounts in the Deposit Authorization list can only make deposits</li>
-                            <li>dissable Deposit Authorization and contact the exchage so they retry the withdrawl</li>
+                            <li>Post on twitter blaming the XRPL does not work</li>
+                            <li>Accounts in the Deposit Authorization list can only make deposits</li>
+                            <li>Dissable Deposit Authorization and contact the exchange so they retry the withdrawl</li>
                         </ol>
                         <a href="#" @click="advanceStep()" class="btn btn-primary">A</a>
                         <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">B</a>
@@ -60,8 +60,8 @@
                         <h5 class="card-title">Forth challenge</h5>
                         <p class="card-text">Can Deposit Authorization be toggled on and off?</p>
                         <ol type="A">
-                            <li>you can toggle Deposit Authorization</li>
-                            <li>once its active it can not be dissabled</li>
+                            <li>You can toggle Deposit Authorization</li>
+                            <li>Once its active it can not be dissabled</li>
                         </ol>
                         <a href="#" @click="advanceStep(true)" class="btn btn-primary">A</a>
                         <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">B</a>
