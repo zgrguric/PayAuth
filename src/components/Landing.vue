@@ -2,6 +2,12 @@
     <div v-if="challenge" class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
             <div v-if="challenge">
+                <div class="stepwizard mb-2">
+                    <a href="#step-1" type="button" class="btn btn-success rounded-circle" :disabled="step === 1 ? '':'disabled'">1</a>
+                    <a href="#step-2" type="button" class="btn btn-secondary rounded-circle ms-2" :disabled="step === 2 ? '':'disabled'">2</a>
+                    <a href="#step-3" type="button" class="btn btn-secondary rounded-circle ms-2" :disabled="step === 3 ? '':'disabled'">3</a>
+                </div>
+
                 <div class="card" style="width: 18rem;">
                     <img src="https://placehold.co/400" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -10,13 +16,6 @@
                         <a href="#" class="btn btn-primary">answer a</a>
                         <a href="#" class="btn btn-primary ms-2">answer b</a>
                     </div>
-                </div>
-
-                
-                <div class="stepwizard">
-                    <a href="#step-1" type="button" class="btn btn-primary rounded-circle" :disabled="step === 1 ? '':'disabled'">1</a>
-                    <a href="#step-2" type="button" class="btn btn-secondary rounded-circle ms-2" :disabled="step === 2 ? '':'disabled'">2</a>
-                    <a href="#step-3" type="button" class="btn btn-secondary rounded-circle ms-2" :disabled="step === 3 ? '':'disabled'">3</a>
                 </div>
             </div>
         </div>
