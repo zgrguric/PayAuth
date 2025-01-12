@@ -1,7 +1,7 @@
 <template>
     <div v-if="challenge" class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
-            <div v-if="challenge">
+            <div v-if="challenge && !failed">
                 <div class="stepwizard mb-2">
                     <a href="#step-1" type="button" :class="step === 1 ? 'btn btn-primary rounded-circle': 'btn btn-secondary rounded-circle'" :disabled="step === 1 ? '':'disabled'">1</a>
                     <a href="#step-2" type="button" :class="step === 2 ? 'btn btn-primary rounded-circle ms-2': 'btn btn-secondary rounded-circle ms-2'" :disabled="step === 2 ? '':'disabled'">2</a>
@@ -68,6 +68,14 @@
                     </div>
                 </div>
             </div>
+            <div v-if="failed">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Forth challenge</h5>
+                        <p class="card-text">You failed to meet the mimimum undesrtanding needed to use this app. Please review the material at <a href="https://xrpl.org/docs/concepts/accounts/depositauth">xrpl.org</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
             
@@ -125,6 +133,8 @@
                 depositAuth: false,
                 challenge: true,
                 step: 1,
+                score: 0,
+                failed: false,
                 accountObjects: {}
             }
         },
@@ -184,10 +194,14 @@
             }
         },
         methods: {
-            advanceStep() {
+            advanceStep(correct) {
                 this.step ++
-                if (this.step > 4) {
+                this.score = (correct) ? this.score + 1 : this.score
+                if (this.step > 4 && this.score >= 3) {
                    this.challenge = false 
+                }
+                if (this.step > 4 && this.score < 3) {
+                    this.failed = true
                 }
             },
             htmlToText: function (html) {
