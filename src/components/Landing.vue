@@ -25,19 +25,16 @@
                     </div>
                 </div>
 
-                <div class="stepwizard col-md-offset-3">
-                    <div class="stepwizard-row setup-panel">
-                        <div class="stepwizard-step">
+                <div class="row">
+                    <div class="stepwizard">
+                        <div class="col stepwizard-step">
                             <a href="#step-1" type="button" class="btn btn-primary rounded-circle" :disabled="step === 1 ? '':'disabled'">1</a>
-                            <p>Step 1</p>
                         </div>
-                        <div class="stepwizard-step">
+                        <div class="col stepwizard-step">
                             <a href="#step-2" type="button" class="btn btn-default rounded-circle" :disabled="step === 2 ? '':'disabled'">2</a>
-                            <p>Step 2</p>
                         </div>
-                        <div class="stepwizard-step">
+                        <div class="col stepwizard-step">
                             <a href="#step-3" type="button" class="btn btn-default rounded-circle" :disabled="step === 3 ? '':'disabled'">3</a>
-                            <p>Step 3</p>
                         </div>
                     </div>
                 </div>
@@ -402,35 +399,5 @@
     }
 
 
-    .stepwizard-step p {
-        margin-top: 10px;
-    }
-    .stepwizard-row {
-        display: table-row;
-    }
-    .stepwizard {
-        display: table;
-        width: 50%;
-        position: relative;
-    }
-    .stepwizard-step button[disabled] {
-        opacity: 1 !important;
-        filter: alpha(opacity=100) !important;
-    }
-
-    .stepwizard-row:before {
-        top: 14px;
-        bottom: 0;
-        position: absolute;
-        content: " ";
-        width: 100%;
-        height: 1px;
-        background-color: #ccc;
-        z-order: 0;
-    }
-    .stepwizard-step {
-        display: table-cell;
-        text-align: center;
-        position: relative;
-    }
+    
 </style>
