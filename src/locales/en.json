@@ -16,7 +16,7 @@
     "challenge_3": "Third challenge",
     "challenge_4": "Fourth challenge",
     "challenge_body_1": "When <em>Deposit Authorization</em> is enabled can you withdraw funds from an exchange to this wallet?",
-    "challenge_body_2": "If you have added accounts to your authorized list and <em>Deposit Authorization</em> is dissabled. Will your account block any transactions?",
+    "challenge_body_2": "If you have added accounts to your authorized list and <em>Deposit Authorization</em> is disabled. Will your account block any transactions?",
     "challenge_body_3": "If you incorrecly authorized an exchanges hotwallet, for example you only add their deposit address and not their with drawl address. Your with drawl transaction to your wallet now fails at the exchange, what do you do?",
     "challenge_body_4": "Can Deposit Authorization be toggled on and off? Where by you temporarily allow any transaction.",
     "challenge_1_ans_a": "No value can be recieved",
@@ -27,9 +27,9 @@
     "challenge_2_ans_c": "Only spam transactions will be blocked",
     "challenge_3_ans_a": "Post on twitter blaming the XRPL does not work",
     "challenge_3_ans_b": "Accounts in the Deposit Authorization list can only make deposits",
-    "challenge_3_ans_c": "Dissable Deposit Authorization and contact the exchange so they retry the withdrawl",
+    "challenge_3_ans_c": "Disable Deposit Authorization and contact the exchange so they retry the withdrawl",
     "challenge_4_ans_a": "You can toggle Deposit Authorization",
-    "challenge_4_ans_b": "Once its active it can not be dissabled",
+    "challenge_4_ans_b": "Once its active it can not be disabled",
     "fail_heading": "Insufficent knowladge to use this xApp",
     "fail_body": "You failed to meet the mimimum understanding needed to use this app. Please review the material at"
 }
