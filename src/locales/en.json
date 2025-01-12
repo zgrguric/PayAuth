@@ -25,7 +25,7 @@
     "challenge_2_ans_a": "No transactions will be blocked",
     "challenge_2_ans_b": "Accounts in the Deposit Authorization can only make deposits",
     "challenge_2_ans_c": "Only spam transactions will be blocked",
-    "challenge_3_ans_a": "Post on twitter blaming the XRPL does not work",
+    "challenge_3_ans_a": "Post on social networks blaming the XRPL does not work",
     "challenge_3_ans_b": "Accounts in the Deposit Authorization list can only make deposits",
     "challenge_3_ans_c": "Disable Deposit Authorization and contact the exchange so they retry the with drawl",
     "challenge_4_ans_a": "You can toggle Deposit Authorization",
