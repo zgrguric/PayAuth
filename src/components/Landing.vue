@@ -1,19 +1,6 @@
 <template>
-    <div class="p-5 mb-4 bg-light rounded-3">
+    <div v-if="challenge" class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
-            <img class="bog-roll" src="/zap.jpeg">
-            <div class="col-md-8 fs-4">                
-                <p class="text-muted text-end fs-6"><span class="fancy-font">PayAuth</span>  by three</p>
-            </div>
-            <div v-if="!challenge" class="col-12 fs-6 mb-5">
-                <h3>{{ $t('app_title') }}</h3>
-                <p v-if="depositAuth" v-html="$t('main_description')"></p><p v-if="depositAuth" v-html="$t('trouble_shoot')"></p>
-                <p v-if="!depositAuth">{{ $t('not_enabled') }}</p>
-            </div>
-
-            <div v-if="alert !== undefined" class="alert alert-warning" role="alert">
-                {{ alert }}
-            </div>
             <div v-if="challenge">
                 <div class="card" style="width: 18rem;">
                     <img src="https://placehold.co/400" class="card-img-top" alt="...">
@@ -39,23 +26,41 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+            
 
-            <div v-if="!challenge">
-                <div v-if="accountObjects !== null && Object.keys(accountObjects).length > 0" class="col-12 fs-6 mt-5 mb-5">
-                    <h5>{{ $t('list_title') }}</h5>
-                    
-                    <div v-for="account in accountObjects"> <button class="mt-2 btn btn-sm btn btn-outline-primary" @click="removeButton(account.Authorize)">{{ account.Authorize }}</button></div>
-                    <small>{{ $t('list_helper') }}</small>
-                </div>
-                <div v-if="accountObjects === null || Object.keys(accountObjects).length === 0" class="col-12 fs-6 mt-5 mb-5">
-                    <h5>{{ $t('list_title') }}</h5>
-                    <p v-if="depositAuth" class="text-danger">{{ $t('warning') }}</p>
-                    <p v-if="!depositAuth">{{ $t('list_information') }}</p>
-                </div>
+    <div v-if="!challenge" class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <img class="bog-roll" src="/zap.jpeg">
+            <div class="col-md-8 fs-4">                
+                <p class="text-muted text-end fs-6"><span class="fancy-font">PayAuth</span>  by three</p>
+            </div>
+            <div class="col-12 fs-6 mb-5">
+                <h3>{{ $t('app_title') }}</h3>
+                <p v-if="depositAuth" v-html="$t('main_description')"></p><p v-if="depositAuth" v-html="$t('trouble_shoot')"></p>
+                <p v-if="!depositAuth">{{ $t('not_enabled') }}</p>
+            </div>
 
-                <div class="col-12 fs-6 mb-5">
-                    <button :class="depositAuth ? 'btn btn-sm btn-danger':'btn btn-sm btn-primary'" @click="authEnableButton()">{{ depositAuth ? $t('main_button_dis'): $t('main_button_en') }}</button>
-                </div>
+            <div v-if="alert !== undefined" class="alert alert-warning" role="alert">
+                {{ alert }}
+            </div>
+
+
+            <div v-if="accountObjects !== null && Object.keys(accountObjects).length > 0" class="col-12 fs-6 mt-5 mb-5">
+                <h5>{{ $t('list_title') }}</h5>
+                
+                <div v-for="account in accountObjects"> <button class="mt-2 btn btn-sm btn btn-outline-primary" @click="removeButton(account.Authorize)">{{ account.Authorize }}</button></div>
+                <small>{{ $t('list_helper') }}</small>
+            </div>
+            <div v-if="accountObjects === null || Object.keys(accountObjects).length === 0" class="col-12 fs-6 mt-5 mb-5">
+                <h5>{{ $t('list_title') }}</h5>
+                <p v-if="depositAuth" class="text-danger">{{ $t('warning') }}</p>
+                <p v-if="!depositAuth">{{ $t('list_information') }}</p>
+            </div>
+
+            <div class="col-12 fs-6 mb-5">
+                <button :class="depositAuth ? 'btn btn-sm btn-danger':'btn btn-sm btn-primary'" @click="authEnableButton()">{{ depositAuth ? $t('main_button_dis'): $t('main_button_en') }}</button>
             </div>
         </div>
     </div>
