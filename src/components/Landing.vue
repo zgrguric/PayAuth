@@ -6,33 +6,65 @@
                     <a href="#step-1" type="button" :class="step === 1 ? 'btn btn-primary rounded-circle': 'btn btn-secondary rounded-circle'" :disabled="step === 1 ? '':'disabled'">1</a>
                     <a href="#step-2" type="button" :class="step === 2 ? 'btn btn-primary rounded-circle ms-2': 'btn btn-secondary rounded-circle ms-2'" :disabled="step === 2 ? '':'disabled'">2</a>
                     <a href="#step-3" type="button" :class="step === 3 ? 'btn btn-primary rounded-circle ms-2': 'btn btn-secondary rounded-circle ms-2'" :disabled="step === 3 ? '':'disabled'">3</a>
+                    <a href="#step-4" type="button" :class="step === 4 ? 'btn btn-primary rounded-circle ms-2': 'btn btn-secondary rounded-circle ms-2'" :disabled="step === 4 ? '':'disabled'">4</a>
                 </div>
 
                 <div v-if="step === 1" class="card">
                     <img src="https://placehold.co/400" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">First challenge</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" @click="advanceStep()" class="btn btn-primary">answer a</a>
-                        <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">answer b</a>
+                        <p class="card-text">When Deposit Authorization is enabled can you with draw funds from an exchange to this wallet?</p>
+                        <ol type="A">
+                            <li>no value can be recieved</li>
+                            <li>only if account is authorized</li>
+                            <li>only accounts in you address book will be accepted</li>
+                        </ol>
+                        <a href="#" @click="advanceStep()" class="btn btn-primary">A</a>
+                        <a href="#" @click="advanceStep(true)" class="btn btn-primary ms-2">B</a>
+                        <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">C</a>
                     </div>
                 </div>
                 <div v-if="step === 2" class="card">
                     <img src="https://placehold.co/400" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Second challenge</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" @click="advanceStep()" class="btn btn-primary">answer a</a>
-                        <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">answer b</a>
+                        <p class="card-text">If you have added accounts to your authorized list and Deposit Authorization is dissabled. Will your account block any transactions?</p>
+                        <ol type="A">
+                            <li>no transactions will be blocked</li>
+                            <li>accounts in the Deposit Authorization can only make deposits</li>
+                            <li>only spam transactions will be blocked</li>
+                        </ol>
+                        <a href="#" @click="advanceStep(true)" class="btn btn-primary">A</a>
+                        <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">B</a>
+                        <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">C</a>
                     </div>
                 </div>
                 <div v-if="step === 3" class="card">
                     <img src="https://placehold.co/400" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Third challenge</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" @click="advanceStep()" class="btn btn-primary">answer a</a>
-                        <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">answer b</a>
+                        <p class="card-text">If you incorrecly authorize an exchanges hotwallet, for example you only add their deposit address and not their with drawl address. You transaction now fails, what do you do?</p>
+                        <ol type="A">
+                            <li>post on twitter blaming the XRPL does not work</li>
+                            <li>accounts in the Deposit Authorization list can only make deposits</li>
+                            <li>dissable Deposit Authorization and contact the exchage so they retry the withdrawl</li>
+                        </ol>
+                        <a href="#" @click="advanceStep()" class="btn btn-primary">A</a>
+                        <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">B</a>
+                        <a href="#" @click="advanceStep(true)" class="btn btn-primary ms-2">C</a>
+                    </div>
+                </div>
+                <div v-if="step === 4" class="card">
+                    <img src="https://placehold.co/400" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Forth challenge</h5>
+                        <p class="card-text">Can Deposit Authorization be toggled on and off?</p>
+                        <ol type="A">
+                            <li>you can toggle Deposit Authorization</li>
+                            <li>once its active it can not be dissabled</li>
+                        </ol>
+                        <a href="#" @click="advanceStep(true)" class="btn btn-primary">A</a>
+                        <a href="#" @click="advanceStep()" class="btn btn-primary ms-2">B</a>
                     </div>
                 </div>
             </div>
@@ -154,7 +186,7 @@
         methods: {
             advanceStep() {
                 this.step ++
-                if (this.step > 3) {
+                if (this.step > 4) {
                    this.challenge = false 
                 }
             },
